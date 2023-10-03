@@ -1,0 +1,47 @@
+.header{
+    max-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 300px;
+}
+
+.titulo{
+   flex-direction: column;
+}
+
+.logo img{
+    max-width: fit-content;
+    max-height: 100px;   
+}
+
+.logo{
+    margin-right: 200px;
+}
+
+.equipo-div{
+    background-color: bisque;
+    height: 200px;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+}
+.equipo-img{
+    justify-content: center;
+    margin: auto;  
+}
+
+.equipo-img img{
+    height: 100;
+    
+}
+
+.equipo-text{
+    background-color: aliceblue;
+    border-color: aliceblue;
+    text-align: center;
+}
+
+.main{
+    
+}
