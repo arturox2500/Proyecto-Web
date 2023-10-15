@@ -48,14 +48,27 @@ body {
     display: flex;
     flex-direction: row;
     margin: 3vh 5vw 3vh;
-    border-bottom-right-radius: 10%;
+    border-bottom-right-radius: 12%;
 }
+
+.equipo-wrapper:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+
 
 
 .equipo-info{
     background-color: #f7f5f0;
     width: 200px;
-    border-bottom-right-radius: 20%;
+    border-bottom-right-radius: 15%;
+    font-size: 0.8em;
+    padding: 8px;
+    text-align: center;
+}
+
+.equipo-info button{
+    
 }
 
 .main{
