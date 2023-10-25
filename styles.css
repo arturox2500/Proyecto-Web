@@ -47,6 +47,7 @@ body {
     background-color: aliceblue;
     border-color: aliceblue;
     text-align: center;
+    padding-top: 5px;
 }
 
 .equipo-wrapper{
@@ -61,20 +62,28 @@ body {
     box-shadow: 0 0 11px rgba(33,33,33,.2);
 }
 
-
+h4{
+    font-family:"proxima-nova",sans-serif;
+    font-weight: bold;
+}
 
 
 .equipo-info{
     background-color: #f7f5f0;
     width: 200px;
     border-bottom-right-radius: 15%;
-    font-size: 0.8em;
-    padding: 8px;
-    text-align: center;
+    font-size: 0.825em;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.equipo-info button{
-    
+.eq-texto{
+    text-align:start;
+}
+
+.eq-boton{
+    text-align: center;
 }
 
 .main{
