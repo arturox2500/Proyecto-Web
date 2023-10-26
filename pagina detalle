@@ -16,7 +16,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light " id="navcolor">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="imagenes/logoliga.jpg" id="navlogoliga"></a>
+            <a class="navbar-brand" href="#"><img src="imagenes/logoliga.png" id="navlogoliga"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,18 +33,31 @@
     <div class="container-fluid" id="fondodepantalla">
         <div class="container-fluid" id="partearriba">
             <div class="row">
-                <div class="col-md-3" id="escudo"><img class="imagenequipo" src="imagenes/Logo_Real_Madrid.jpg"></div>
-                <div class="col-md-1"> </div>
-                <div class="col-md-8" id="descripcion"> <h4>Descripcion</h4><hr size="" color=""><p> Real Madrid Club de Fútbol, con sede en Madrid, España, es uno de los clubes de fútbol más icónicos y exitosos del mundo.
-                     Fundado en 1902, el Real Madrid ha forjado una rica historia de triunfos y es ampliamente reconocido por su emblemática camiseta blanca.
-                      El club compite en la La Liga española y juega sus partidos como local en el estadio Santiago Bernabéu.
-                       Con una extensa vitrina de trofeos, el Real Madrid ha ganado numerosas Ligas de Campeones de la UEFA y títulos de La Liga.
-                        Han contado con leyendas del fútbol como Di Stéfano, Cristiano Ronaldo y Zidane, y su rivalidad con el Barcelona en el Clásico español es una de las más intensas del deporte.
-                         El Real Madrid sigue siendo un referente mundial en el fútbol y continúa atrayendo a aficionados de todo el planeta.</p> 
-                         <button type="submit" class="btn btn-primary">Borrar</button>
-                         <button type="submit" class="btn btn-primary">Editar</button>
-                         <button type="submit" class="btn btn-primary">Todos los elementos</button>
-                        </div>
+                <div class="col-md-4" id="escudo"><img class="img-fluid"  id="imagenequipo" src="imagenes/Logo_Real_Madrid.jpg"></div>
+                <div class="col-md-8" id="descripcion">
+                    <h4>Descripcion</h4>
+                    <hr size="" color="">
+                    <p><strong>Estadio</strong>: Santiago Bernabéu</p>
+                    <p><strong>Fecha de fundacion:</strong> 6 de marzo de 1902</p> 
+                    <p><strong>Numero de titulos de Liga:</strong> 35</p>
+                    <hr size="" color="">
+
+                    <p> Real Madrid Club de Fútbol, con sede en Madrid, España, es uno de los clubes de fútbol más
+                        icónicos y exitosos del mundo.
+                        Fundado en 1902, el Real Madrid ha forjado una rica historia de triunfos y es ampliamente
+                        reconocido por su emblemática camiseta blanca.
+                        El club compite en la La Liga española y juega sus partidos como local en el estadio Santiago
+                        Bernabéu.
+                        Con una extensa vitrina de trofeos, el Real Madrid ha ganado numerosas Ligas de Campeones de la
+                        UEFA y títulos de La Liga.
+                        Han contado con leyendas del fútbol como Di Stéfano, Cristiano Ronaldo y Zidane, y su rivalidad
+                        con el Barcelona en el Clásico español es una de las más intensas del deporte.
+                        El Real Madrid sigue siendo un referente mundial en el fútbol y continúa atrayendo a aficionados
+                        de todo el planeta.</p>
+                    <button type="submit" class="btn btn-primary">Borrar</button>
+                    <button type="submit" class="btn btn-primary">Editar</button>
+                    <button type="submit" class="btn btn-primary">Todos los elementos</button>
+                </div>
             </div>
 
         </div>
@@ -82,7 +95,9 @@
                             <td>Modric </td>
                             <td>38 años </td>
                             <td>Mediocentro </td>
-                            <td><p id="formajugadoresE">Excelente</p> </td>
+                            <td>
+                                <p id="formajugadoresE">Excelente</p>
+                            </td>
                             <td>20.000.000 € </td>
                         </tr>
                         <tr>
@@ -91,7 +106,9 @@
                             <td>Kroos </td>
                             <td>33 años </td>
                             <td>Mediocentro </td>
-                            <td><p id="formajugadoresE">Excelente</p> </td>
+                            <td>
+                                <p id="formajugadoresE">Excelente</p>
+                            </td>
                             <td>30.000.000 € </td>
                         </tr>
                         <tr>
@@ -100,7 +117,9 @@
                             <td>Junior </td>
                             <td>23 años </td>
                             <td>Delantero </td>
-                            <td><p id="formajugadoresE">Excelente</p> </td>
+                            <td>
+                                <p id="formajugadoresE">Excelente</p>
+                            </td>
                             <td>120.000.000 € </td>
                         </tr>
                         <tr>
@@ -109,7 +128,9 @@
                             <td>Goes</td>
                             <td>22 años </td>
                             <td>Delantero </td>
-                            <td><p id="formajugadoresE">Excelente</p> </td>
+                            <td>
+                                <p id="formajugadoresE">Excelente</p>
+                            </td>
                             <td>100.000.000 € </td>
                         </tr>
                         <tr>
@@ -118,7 +139,9 @@
                             <td>Valverde</td>
                             <td>25 años </td>
                             <td>Mediocentro </td>
-                            <td><p id="formajugadoresN">Normal</p> </td>
+                            <td>
+                                <p id="formajugadoresN">Normal</p>
+                            </td>
                             <td>100.000.000 € </td>
                         </tr>
                         <tr>
@@ -127,7 +150,9 @@
                             <td>Alaba</td>
                             <td>31 años </td>
                             <td>Defensa </td>
-                            <td><p id="formajugadoresE">Excelente</p> </td>
+                            <td>
+                                <p id="formajugadoresE">Excelente</p>
+                            </td>
                             <td>40.000.000 € </td>
                         </tr>
                         <tr>
@@ -136,7 +161,9 @@
                             <td>Rudiger</td>
                             <td>30 años </td>
                             <td>Defensa </td>
-                            <td><p id="formajugadoresN">Normal</p> </td>
+                            <td>
+                                <p id="formajugadoresN">Normal</p>
+                            </td>
                             <td>70.000.000 € </td>
                         </tr>
                         <tr>
@@ -145,7 +172,9 @@
                             <td>Courtois</td>
                             <td>31 años </td>
                             <td>Portero </td>
-                            <td><p id="formajugadoresE">Excelente</p> </td>
+                            <td>
+                                <p id="formajugadoresE">Excelente</p>
+                            </td>
                             <td>50.000.000 € </td>
                         </tr>
                         <tr>
@@ -154,7 +183,9 @@
                             <td>Carvajal</td>
                             <td>31 años </td>
                             <td>Defensa </td>
-                            <td><p id="formajugadoresM">Mala</p> </td>
+                            <td>
+                                <p id="formajugadoresM">Mala</p>
+                            </td>
                             <td>30.000.000 € </td>
                         </tr>
                     </tbody>
@@ -218,10 +249,6 @@
                 </div>
             </form>
         </div>
-    </div>
-</body>
-
-</html>
     </div>
 </body>
 
