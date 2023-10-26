@@ -52,9 +52,9 @@ body {
 
 .equipo-wrapper{
     height: 200px;
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
-    margin: 3vh 5vw 3vh;
+    margin: 3vh 4vw 3vh;
     border-bottom-right-radius: 12%;
 }
 
@@ -92,10 +92,9 @@ h4{
 }
 
 .lista{
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: row;
+    justify-content:space-evenly;
 }
 
 .footer{
