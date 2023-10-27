@@ -1,0 +1,83 @@
+#imagenequipo {
+height: 400px;
+width: 250px;
+    margin: 15px;
+}
+
+.imagenjugadores {
+    width: 90px;
+    height: 50px;
+
+}
+
+#escudo {
+    display: inline-block;
+    background-color: rgb(23, 23, 23);
+    text-align: center;
+    margin-top: 10px;
+    margin-block: 50px;
+}
+
+#descripcion {
+    color: white;
+    display: inline-block;
+    background-color: rgb(23, 23, 23);
+    margin-top: 10px;
+    margin-block: 50px;
+}
+
+#formajugadoresE {
+    color: rgb(9, 222, 9);
+}
+
+#formajugadoresN {
+    color: rgb(222, 246, 5);
+}
+
+#formajugadoresM {
+    color: rgb(232, 3, 3);
+}
+
+#fondodepantalla {
+    background-color: rgb(23, 23, 23);
+    border-width: 30px;
+    border-style: solid;
+    border-color: rgb(4, 4, 4);
+    ;
+}
+
+#formulario {
+    background-color: rgb(255, 255, 255);
+    margin-block: 10px;
+    padding: 10px;
+    border-color: rgb(217, 0, 21);
+    border-width: 5px;
+    border-style: solid;
+}
+
+#formulariojugadores {
+    background-color: rgb(255, 255, 255);
+
+}
+
+#comentario {
+    color: rgb(144, 141, 141);
+
+}
+
+#navlogoliga {
+    width: 90px;
+    height: 50px;
+}
+
+#navcolor {
+    background-color: rgb(4, 4, 4);
+}
+#letrasblancas{
+    color: white;
+}
+#tablaJugadores{
+    border-color: rgb(217, 0, 21);
+    border-width: 5px;
+    border-style: solid;
+}
