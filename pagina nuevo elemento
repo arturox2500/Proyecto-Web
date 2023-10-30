@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PRACTICA 1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"> </script>
+    <link type="text/css" rel="stylesheet" href="styleNuevo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+</head>
+
+<body>
+    <form role="form" id="formulario">
+        <div class="form-group">
+            <label for="formFile" class="form-label">Imagen Escudo</label>
+            <input class="form-control" type="file" id="formFile">
+        </div>
+        <div class="row">
+            <label for="name" class="form-label">Nombre del club</label>
+            <input type="text" class="form-control" placeholder="Escribir nombre">
+        </div>
+        <div class="row">
+            <label for="Edad" class="form-label">Nombre del estadio</label>
+            <input type="text" class="form-control" id="Edad" placeholder="Escribir estadio">
+        </div>
+        <div class="row">
+            <div class="col">
+                <p><strong> Fecha fundacion</strong></p>
+                <p>Dia</p>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>opciones</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+            </div>
+            <div class="col">
+                <p></p>
+                <br>
+                <p>Mes</p>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>opciones</option>
+                    <option value="1">Enerto</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+
+            </div>
+            <div class="col">
+                <p></p>
+                <br>
+                <label for="Edad" class="form-label">Año</label>
+                <input type="text" class="form-control"  placeholder="Escribir Año">
+                </select>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="Edad" class="form-label">Titulos de Liga</label>
+                <input type="number" class="form-control">
+            </div>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-secondary" id="boton">Insertar</button>
+        </div>
+    </form>
+
+</body>
+
+</html>
