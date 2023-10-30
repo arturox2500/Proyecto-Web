@@ -14,31 +14,33 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light " id="navcolor">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark  ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="imagenes/logoliga.png" id="navlogoliga"></a>
+            <a class="navbar-brand" href="#"><img src="https://www.fifplay.com/img/public/laliga-logo-plain.png"
+                    id="navlogoliga"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="#" id="letrasblancas">Descripcion</a>
-                    <a class="nav-link" href="#" id="letrasblancas">Jugadores</a>
-                    <a class="nav-link" href="#" id="letrasblancas">Formulario</a>
+                    <a class="nav-link" href="#">Descripcion</a>
+                    <a class="nav-link" href="#">Jugadores</a>
+                    <a class="nav-link" href="#">Formulario</a>
                 </div>
             </div>
         </div>
     </nav>
     <div class="container-fluid" id="fondodepantalla">
-        <div class="container-fluid" id="partearriba">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4" id="escudo"><img class="img-fluid"  id="imagenequipo" src="imagenes/Logo_Real_Madrid.jpg"></div>
+                <div class="col-md-4" id="escudo"><img class="img-fluid" id="imagenequipo"
+                        src="imagenes/Logo_Real_Madrid.jpg"></div>
                 <div class="col-md-8" id="descripcion">
                     <h4>Descripcion</h4>
                     <hr size="" color="">
                     <p><strong>Estadio</strong>: Santiago Bernabéu</p>
-                    <p><strong>Fecha de fundacion:</strong> 6 de marzo de 1902</p> 
+                    <p><strong>Fecha de fundacion:</strong> 6 de marzo de 1902</p>
                     <p><strong>Numero de titulos de Liga:</strong> 35</p>
                     <hr size="" color="">
 
@@ -54,16 +56,18 @@
                         con el Barcelona en el Clásico español es una de las más intensas del deporte.
                         El Real Madrid sigue siendo un referente mundial en el fútbol y continúa atrayendo a aficionados
                         de todo el planeta.</p>
-                    <button type="submit" class="btn btn-primary">Borrar</button>
-                    <button type="submit" class="btn btn-primary">Editar</button>
-                    <button type="submit" class="btn btn-primary">Todos los elementos</button>
+                    <div>
+                        <button type="submit" class="btn btn-secondary" id="botonesdes">Borrar</button>
+                        <button type="submit" class="btn btn-secondary" id="botonesdes">Editar</button>
+                        <button type="submit" class="btn btn-secondary" id="botonesdes">Todos los elementos</button>
+                    </div>
                 </div>
             </div>
 
         </div>
         <div class="container-fluid">
-            <h5 id="letrasblancas">Jugadores del Real Madrid </h5>
-            <p id="letrasblancas">Tabla de jugadores del Real Madrid </p>
+            <h5>Jugadores del Real Madrid </h5>
+            <p>Tabla de jugadores del Real Madrid </p>
             <div class="table-responsive">
                 <table class="table table-hover" id="tablaJugadores">
                     <thead>
@@ -245,7 +249,7 @@
                     </div>
                 </div>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-secondary">Insertar</button>
                 </div>
             </form>
         </div>
