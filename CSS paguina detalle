@@ -1,7 +1,6 @@
 #imagenequipo {
-height: 400px;
-width: 250px;
-    margin: 15px;
+    height: 350px;
+    margin-top: 80px;
 }
 
 .imagenjugadores {
@@ -11,17 +10,13 @@ width: 250px;
 }
 
 #escudo {
-    display: inline-block;
-    background-color: rgb(23, 23, 23);
     text-align: center;
     margin-top: 10px;
     margin-block: 50px;
 }
 
 #descripcion {
-    color: white;
     display: inline-block;
-    background-color: rgb(23, 23, 23);
     margin-top: 10px;
     margin-block: 50px;
 }
@@ -39,10 +34,10 @@ width: 250px;
 }
 
 #fondodepantalla {
-    background-color: rgb(23, 23, 23);
+    background-color: beige;
     border-width: 30px;
     border-style: solid;
-    border-color: rgb(4, 4, 4);
+    border-color: bisque;
     ;
 }
 
@@ -50,9 +45,7 @@ width: 250px;
     background-color: rgb(255, 255, 255);
     margin-block: 10px;
     padding: 10px;
-    border-color: rgb(217, 0, 21);
-    border-width: 5px;
-    border-style: solid;
+
 }
 
 #formulariojugadores {
@@ -66,18 +59,11 @@ width: 250px;
 }
 
 #navlogoliga {
-    width: 90px;
-    height: 50px;
+
+    height: 45px;
 }
 
-#navcolor {
-    background-color: rgb(4, 4, 4);
-}
-#letrasblancas{
-    color: white;
-}
-#tablaJugadores{
-    border-color: rgb(217, 0, 21);
-    border-width: 5px;
-    border-style: solid;
+
+#botonesdes {
+    margin-block: 5px;
 }
