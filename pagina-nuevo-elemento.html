@@ -14,9 +14,9 @@
 </head>
 
 <body>
-    <div class="main">
-        <div class="row">
-            <div class="col">
+    <div class="container-fluid" id="main">
+        <div class="row" id="parteblanca">
+            <div class="col" id="containerform">
                 <form role="form" id="formulario">
                     <div class="form-group">
                         <label for="formFile" class="form-label">Imagen Escudo</label>
@@ -31,8 +31,8 @@
                         <input type="text" class="form-control" id="Edad" placeholder="Escribir estadio">
                     </div>
                     <div class="row">
+                        <p><strong> Fecha fundacion</strong></p>
                         <div class="col">
-                            <p><strong> Fecha fundacion</strong></p>
                             <p>Dia</p>
                             <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                                 <option selected>opciones</option>
@@ -70,8 +70,7 @@
                             </select>
                         </div>
                         <div class="col">
-                            <p></p>
-                            <br>
+
                             <p>Mes</p>
                             <select class="form-select form-select-sm" aria-label=".form-select-sm example">
                                 <option selected>opciones</option>
@@ -91,8 +90,6 @@
 
                         </div>
                         <div class="col">
-                            <p></p>
-                            <br>
                             <label for="Edad" class="form-label">Año</label>
                             <input type="text" class="form-control" placeholder="Escribir Año">
                             </select>
@@ -106,12 +103,17 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-secondary" id="boton">Insertar</button>
+                        <button type="submit" class="btn btn-secondary" id="boton">Guardar</button>
+                        <a href="pagina.html">
+                            <button type="submit" class="btn btn-secondary" id="boton">Cancelar</button>
+                        </a>
                     </div>
                 </form>
             </div>
             <div class="col">
-                <img class="img-fluid" src="imagenes/oldteams.png" id="imagenesequipos">
+                <div class="container-fluid">
+                    <img src="imagenes/allteams.png" id="imagenesequipos">
+                </div>
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@ body{
     margin: 0;  
 }
 
-.main {
+#main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,36 +10,26 @@ body{
     background-color: beige;
 }
 
-.main form {
+#formulario{
     width: 100%;
     max-width: 500px; 
     background-color: white;
-}
-
-#formulario{
     padding: 30px;
+    border-right-width: 2px;
+    border-right-style: dashed;
+    border-right-color: rgb(0, 0, 0);
 
 }
 #boton{
     margin-block: 10px;
 }
 #imagenesequipos{
-    max-width: 400px;
+    max-width: 100%;
 }
-.col{
+#containerform{
     padding: 0px;
     margin-left: 10px;
 }
-.row{
+#parteblanca{
     background-color: white;
-}
-.col img{
-margin-block: 40px;
-height: auto;
-width: auto;
-}
-.col form{
-    border-right-width: 2px;
-    border-right-style: dashed;
-    border-right-color: rgb(0, 0, 0);
 }
