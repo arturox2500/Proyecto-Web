@@ -1,47 +1,31 @@
 body{
-    margin: 0;  
-}
-
-#main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0, auto;  
     height: 100vh;
     background-color: beige;
+    display:flex; 
+    flex-direction:column; 
+    justify-content:center;
+    align-items: center;
 }
+
 
 #formulario{
     width: 100%;
     max-width: 500px; 
     background-color: white;
     padding: 30px;
-    border-right-width: 2px;
-    border-right-style: dashed;
     border-right-color: rgb(0, 0, 0);
-
+    
 }
+
+h4{
+    margin-bottom: 20px;
+}
+
 #boton{
     margin-block: 10px;
 }
-#imagenesequipos{
-    vertical-align: middle;
-    align-self: center;
-    height: 50px;
-}
-#containerform{
-    padding: 0px;
-    margin-left: 10px;
-}
-#parteblanca{
-    background-color: white;
-}
 
-#imagendiv{
-    align-items: center;
-    text-align: center;
-    vertical-align: middle;
-}
-
-#imgimgdiv{
-    vertical-align: middle;
+.imp{
+    margin-left: 12px;
 }
