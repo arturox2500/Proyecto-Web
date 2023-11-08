@@ -76,15 +76,13 @@ h4{
     padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
+    position:relative;
 }
 
 .eq-texto{
     text-align:start;
 }
 
-.eq-boton{
-    text-align: center;
-}
 
 .main{
     padding-top: 10vh;
@@ -107,3 +105,8 @@ h4{
     padding: 6vh;
 }
 
+.eq-boton{
+    position: absolute;
+    bottom: 5%;
+    margin-left: 25%;
+}

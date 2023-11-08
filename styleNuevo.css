@@ -24,7 +24,8 @@ body{
     margin-block: 10px;
 }
 #imagenesequipos{
-    max-width: 100%;
+    vertical-align: middle;
+    align-self: center;
 }
 #containerform{
     padding: 0px;
@@ -32,4 +33,14 @@ body{
 }
 #parteblanca{
     background-color: white;
+}
+
+#imagendiv{
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#imgimgdiv{
+    vertical-align: middle;
 }
