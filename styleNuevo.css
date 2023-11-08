@@ -26,6 +26,7 @@ body{
 #imagenesequipos{
     vertical-align: middle;
     align-self: center;
+    height: 50px;
 }
 #containerform{
     padding: 0px;
