@@ -28,8 +28,8 @@ body {
 
 .equipo-div{
     background-color: bisque;
-    height: 200px;
-    width: 160px;
+    height: 180px;
+    width: 140px;
     display: flex;
     flex-direction: column; 
 }
