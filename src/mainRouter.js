@@ -9,18 +9,6 @@ mainRouter.get("/", (req, res)=>{
 })
 
 
-// mainRouter.post('/new-elem', (req, res)=>{
-//     res.render('pagina', {
-//         link: req.body.link,
-//         equipo: req.body.equipo,
-//         estadio: req.body.estadio,
-//         dia: req.body.dia,
-//         mes: req.body.mes,
-//         anyo: req.body.anyo,
-//         titulos: req.body.titulos,
-//     })
-// })
-
 mainRouter.post('/new-elem', (req, res) => {
 
     let { link, equipo, estadio, dia, mes, anyo, titulos} = req.body;
@@ -31,12 +19,10 @@ mainRouter.post('/new-elem', (req, res) => {
     res.render("pagina", { posts });
 });
 
-// router.get('/post/:id', (req, res) => {
-
-//     let post = mainService.getPost(req.params.id);
-
-//     res.render('show_post', { post });
-// });
+mainRouter.get('/post/:nombre', (req, res) => {
+    let post = mainService.getPost(req.params.nombre);
+    res.render('pagina-detalle', { post });
+});
 
 // router.get('/post/:id/delete', (req, res) => {
 
