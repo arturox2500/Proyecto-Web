@@ -8,7 +8,6 @@ mainRouter.get("/", (req, res)=>{
     res.render('pagina', { posts });
 })
 
-
 mainRouter.post('/new-elem', (req, res) => {
 
     let { link, equipo, estadio, dia, mes, anyo, titulos} = req.body;
@@ -19,8 +18,8 @@ mainRouter.post('/new-elem', (req, res) => {
     res.render("pagina", { posts });
 });
 
-mainRouter.get('/post/:nombre', (req, res) => {
-    let post = mainService.getPost(req.params.nombre);
+mainRouter.get('/post/:id', (req, res) => {
+    let post = mainService.getPost(req.params.id);
     res.render('pagina-detalle', { post });
 });
 
