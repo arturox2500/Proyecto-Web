@@ -53,7 +53,7 @@ export function validForm(body){
         errorMessage.push("El nombre del estadio es obligatorio");
     }
 
-    if (body.dia === "opciones" || body.mes === "opciones" || body.anyo === "") {
+    if (body.dia === "" || body.mes === "" || body.anyo === "") {
         errorMessage.push("La fecha completa (dia, mes y año) es obligatoria");
     }
 
