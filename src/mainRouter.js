@@ -12,7 +12,6 @@ mainRouter.post('/new-elem', (req, res) => {
 
     let { link, equipo, estadio, dia, mes, anyo, titulos} = req.body;
     const validationErrors = mainService.validForm(req.body);
-    console.log(req.body)
     if (validationErrors.length == 0){
         mainService.addPost({ link, equipo, estadio, dia, mes, anyo, titulos });
         const posts = mainService.getPosts();
