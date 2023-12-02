@@ -16,4 +16,8 @@ app.use(express.static(__dirname + '/../public'));
 
 app.use('/', mainRouter);
 
+app.get('/pagina-nuevo-elemento', (req, res) => {
+    res.render('pagina-nuevo-elemento');
+});
+
 app.listen(3000, () => console.log('Listening on port 3000!'));

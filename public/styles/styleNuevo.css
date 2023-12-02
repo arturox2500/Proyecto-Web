@@ -1,6 +1,5 @@
 body{
-    margin: 0, auto;  
-    height: 100vh;
+    margin: 0 auto;  
     background-color: beige;
     display:flex; 
     flex-direction:column; 
@@ -15,12 +14,9 @@ body{
     background-color: white;
     padding: 30px;
     border-right-color: rgb(0, 0, 0);
-    
 }
 
-h4{
-    margin-bottom: 20px;
-}
+
 
 #boton{
     margin-block: 10px;
@@ -28,4 +24,9 @@ h4{
 
 .imp{
     margin-left: 12px;
+}
+
+#errors{
+    padding-top: 20px;
+    color: red;
 }

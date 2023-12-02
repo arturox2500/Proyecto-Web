@@ -14,28 +14,34 @@
 </head>
 
 <body>
-    <div id="containerform">       
+    <div id="containerform">    
         <form role="form" id="formulario" action="new-elem" method="post">
-            <h4>Nuevo Elemento</h4>
+            <h3>Nuevo Equipo</h3>
+            <ul id="errors">
+                {{#errorMessage}}
+                    <li>{{.}}</li>
+                {{/errorMessage}}
+            </ul>
+            
             <div class="form-group">
                 <label for="formFile" class="form-label">URL imagen escudo</label>
-                <input type="text" name="link" class="form-control" placeholder="Escribir URL">
+                <input type="text" name="link" value="{{FormData.link}}"class="form-control" placeholder="Escribir URL">
             </div>
             <div class="row">
                 <label for="name" class="form-label">Nombre del club</label>
-                <input type="text" name="equipo" class="form-control imp" placeholder="Escribir nombre">
+                <input type="text" name="equipo" value="{{FormData.equipo}}"class="form-control imp" placeholder="Escribir nombre">
             </div>
             <div class="row">
                 <label for="Edad" class="form-label">Nombre del estadio</label>
-                <input type="text" name="estadio" class="form-control imp" id="Edad" placeholder="Escribir estadio">
+                <input type="text" name="estadio" value="{{FormData.estadio}}"class="form-control imp" id="Edad" placeholder="Escribir estadio">
             </div>
             <br>
             <div class="row">                
                 <p><strong> Fecha fundacion</strong></p>
                 <div class="col">
                     <p>Dia</p>
-                    <select name="dia" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>opciones</option>
+                    <select name="dia" value="{{FormData.dia}}"class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>{{FormData.dia}}</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -73,25 +79,25 @@
 
                     <p>Mes</p>
                     <select name="mes" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected>opciones</option>
-                        <option value="1">Enero</option>
-                        <option value="2">Febrero</option>
-                        <option value="3">Marzo</option>
-                        <option value="4">Abril</option>
-                        <option value="5">Mayo</option>
-                        <option value="6">Junio</option>
-                        <option value="7">Julio</option>
-                        <option value="8">Agosto</option>
-                        <option value="9">Septiembre</option>
-                        <option value="10">Octubre</option>
-                        <option value="11">Noviembre</option>
-                        <option value="12">Diciembre</option>
+                        <option selected>{{FormData.mes}}</option>
+                        <option value="Enero">Enero</option>
+                        <option value="Febrero">Febrero</option>
+                        <option value="Marzo">Marzo</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Mayo">Mayo</option>
+                        <option value="Junio">Junio</option>
+                        <option value="Julio">Julio</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Septiembre">Septiembre</option>
+                        <option value="Octubre">Octubre</option>
+                        <option value="Noviembre">Noviembre</option>
+                        <option value="Diciembre">Diciembre</option>
                     </select>
 
                 </div>
                 <div class="col">
                     <label for="año" class="form-label">Año</label>
-                    <input type="number" name="anyo" class="form-control" placeholder="Escribir Año">
+                    <input type="number" name="anyo" value="{{FormData.anyo}}"class="form-control" placeholder="Escribir Año">
                     </select>
 
                 </div>
@@ -99,13 +105,13 @@
             <div class="row">
                 <div class="col">
                     <label for="Edad" class="form-label">Titulos de Liga</label>
-                    <input type="number" name="titulos" class="form-control">
+                    <input type="number" name="titulos" value="{{FormData.titulos}}" class="form-control">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="exampleFormControlTextarea1">Descripcion</label>
-                    <textarea class="form-control" name="descripcion" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" name="descripcion" value="{{FormData.descripcion}}" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
             </div>
             <div class="col-auto">

@@ -35,3 +35,37 @@ export function getPosts(){
 export function getPost(id){
     return posts.get(id);
 }
+
+//link, equipo, estadio, dia(opciones), mes(opciones), anyo, titulos, descripcion
+
+export function validForm(body){
+    let errorMessage = [];
+
+    if (body.link === "") {
+        errorMessage.push("El campo URL es obligatorio");
+    }
+
+    if (body.equipo === "") {
+        errorMessage.push("El nombre del club es obligatorio");
+    }
+
+    if (body.estadio === "") {
+        errorMessage.push("El nombre del estadio es obligatorio");
+    }
+
+    if (body.dia === "opciones" || body.mes === "opciones" || body.anyo === "") {
+        errorMessage.push("La fecha completa (dia, mes y año) es obligatoria");
+    }
+
+    if (body.titulos === "") {
+        errorMessage.push("El campo titulos es obligatorio");
+    } else if (body.titulos < 0){
+        errorMessage.push("El campo titulos no puede ser menor a 0");
+    }
+
+    if (body.descripcion === "") {
+        errorMessage.push("El campo descripcion es obligatorio");
+    }
+
+    return errorMessage;
+}
