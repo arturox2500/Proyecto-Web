@@ -9,6 +9,8 @@ body{
 
 
 #formulario{
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
     width: 100%;
     max-width: 500px; 
     background-color: white;
