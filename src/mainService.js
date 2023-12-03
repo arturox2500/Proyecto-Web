@@ -2,10 +2,10 @@ const posts = new Map();
 let nextId = 0;
 
 
-addPost({link: "https://assets.stickpng.com/images/584a9b47b080d7616d298778.png", equipo: "Real Madrid", estadio: "Santiago Bernabéu", dia: 6, mes: "marzo", anyo: 1902, titulos: 35})
+addPost({link: "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png", equipo: "Real Madrid", estadio: "Santiago Bernabéu", dia: 6, mes: "marzo", anyo: 1902, titulos: 35})
 addPost({link: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Deportivo_Alaves_logo_%282020%29.svg/800px-Deportivo_Alaves_logo_%282020%29.svg.png", equipo: "Alavés", estadio: "Mendizorroza", dia: 23, mes: "enero", anyo: 1921, titulos: 0});
 addPost({link: "https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Club_Athletic_Bilbao_logo.svg/1200px-Club_Athletic_Bilbao_logo.svg.png", equipo: "Athletic Club", estadio: "San Mamés", dia: 21, mes: "agosto", anyo: 1898, titulos: 8});
-addPost({link: "https://assets.stickpng.com/images/584a9b3bb080d7616d298777.png", equipo: "Barcelona", estadio: "Camp Nou", dia: 29, mes: "noviembre", anyo: 1899, titulos: 27});
+addPost({link: "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png", equipo: "Barcelona", estadio: "Camp Nou", dia: 29, mes: "noviembre", anyo: 1899, titulos: 27});
 addPost({link: "https://upload.wikimedia.org/wikipedia/en/thumb/1/13/Real_betis_logo.svg/1200px-Real_betis_logo.svg.png", equipo: "Betis", estadio: "Benito Villamarín", dia: 12, mes: "septiembre", anyo: 1907, titulos: 1});
 addPost({link: "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/RC_Celta_de_Vigo_logo.svg/1200px-RC_Celta_de_Vigo_logo.svg.png", equipo: "Celta", estadio: "Abanca-Balaídos", dia: 23, mes: "agosto", anyo: 1923, titulos: 0});
 addPost({link: "https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Getafe_logo.svg/1200px-Getafe_logo.svg.png", equipo: "Getafe", estadio: "Coliseum Alfonso Pérez", dia: 24, mes: "febrero", anyo: 1946, titulos: 0});
@@ -55,6 +55,8 @@ export function validForm(body){
 
     if (body.dia === "" || body.mes === "" || body.anyo === "") {
         errorMessage.push("La fecha completa (dia, mes y año) es obligatoria");
+    } else if (body.anyo<1500){
+        errorMessage.push("Por favor introduzca una fecha valida")
     }
 
     if (body.titulos === "") {
