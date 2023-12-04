@@ -18,6 +18,7 @@ addPost({link: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/Real_Socied
 addPost({link: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/Rcd_mallorca.svg/1200px-Rcd_mallorca.svg.png", equipo: "Mallorca", estadio: "Son Moix", dia: 5, mes: "marzo", anyo: 1916, titulos: 0});
 addPost({link: "https://upload.wikimedia.org/wikipedia/en/thumb/d/db/Osasuna_logo.svg/1200px-Osasuna_logo.svg.png", equipo: "Osasuna", estadio: "El Sadar", dia: 24, mes: "octubre", anyo: 1920, titulos: 0});
 
+
 export function addPost(post) {
     let id = nextId++;
     post.id = id.toString();
