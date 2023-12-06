@@ -98,8 +98,7 @@
 
         <div class="container-fluid" id="formulario" >
             <h2>Nuevo jugador </h2>
-            <form role="form" id="formulariojugadores" action="/post/new-jugador" method="post">
-                <input type="hidden" name="postId" value="{{ post.id }}">
+            <form role="form" id="formulariojugadores" action="/post/{{ post.id }}" method="post">
                 <div class="form-group">
                     <label for="formFile" class="form-label">URL Imagen</label>
                     <input type="text" name="URL" class="form-control" placeholder="Escribir URL">

@@ -31,11 +31,11 @@ mainRouter.get('/post/:id', (req, res) => {
     res.render('pagina-detalle', { post });
 });
 
-mainRouter.post('/post/new-jugador', (req, res) => {
-    let {postId, URL, Nombre, Apellidos, Edad, Pos, Forma, Precio } = req.body;
- 
-
-        mainService.addPlayerToPost(postId,{ URL, Nombre, Apellidos, Edad, Pos, Forma, Precio });
+mainRouter.post('/post/:id', (req, res) => {
+    let {URL, Nombre, Apellidos, Edad, Pos, Forma, Precio } = req.body;
+    const postId = req.params.id;
+    console.log(postId)
+    mainService.addPlayerToPost(postId,{ URL, Nombre, Apellidos, Edad, Pos, Forma, Precio });
 
 });
 
