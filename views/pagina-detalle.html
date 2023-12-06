@@ -76,116 +76,19 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {{#post.jugadores}}
                         <tr>
-                            <td><img src="imagenes/Jude-Bellingham-Madrid.webp" class="imagenjugadores"> </td>
-                            <td>Jude </td>
-                            <td>Bellingham </td>
-                            <td>20 años </td>
-                            <td>Mediocentro </td>
+                            <td><img src="{{URL}}" class="imagenjugadores"> </td>
+                            <td>{{Nombre}} </td>
+                            <td>{{Apellidos}} </td>
+                            <td>{{Edad}} años </td>
+                            <td>{{Pos}} </td>
                             <td>
-                                <p id="formajugadoresE">Excelente</p>
+                                <p>{{Forma}}</p>
                             </td>
-                            <td>150.000.000 € </td>
+                            <td>{{Precio}}.000.000 € </td>
                         </tr>
-                        <tr>
-                            <td><img src="imagenes/modrc.jpeg" class="imagenjugadores"> </td>
-                            <td>Luka </td>
-                            <td>Modric </td>
-                            <td>38 años </td>
-                            <td>Mediocentro </td>
-                            <td>
-                                <p id="formajugadoresE">Excelente</p>
-                            </td>
-                            <td>20.000.000 € </td>
-                        </tr>
-                        <tr>
-                            <td><img src="imagenes/kroos.jpeg" class="imagenjugadores"> </td>
-                            <td>Toni </td>
-                            <td>Kroos </td>
-                            <td>33 años </td>
-                            <td>Mediocentro </td>
-                            <td>
-                                <p id="formajugadoresE">Excelente</p>
-                            </td>
-                            <td>30.000.000 € </td>
-                        </tr>
-                        <tr>
-                            <td><img src="imagenes/vini.jpeg" class="imagenjugadores"> </td>
-                            <td>Vinicius </td>
-                            <td>Junior </td>
-                            <td>23 años </td>
-                            <td>Delantero </td>
-                            <td>
-                                <p id="formajugadoresE">Excelente</p>
-                            </td>
-                            <td>120.000.000 € </td>
-                        </tr>
-                        <tr>
-                            <td><img src="imagenes/rodrigo.jpeg" class="imagenjugadores"> </td>
-                            <td>Rodrygo </td>
-                            <td>Goes</td>
-                            <td>22 años </td>
-                            <td>Delantero </td>
-                            <td>
-                                <p id="formajugadoresE">Excelente</p>
-                            </td>
-                            <td>100.000.000 € </td>
-                        </tr>
-                        <tr>
-                            <td><img src="imagenes/valverde.jpeg" class="imagenjugadores"> </td>
-                            <td>Federico </td>
-                            <td>Valverde</td>
-                            <td>25 años </td>
-                            <td>Mediocentro </td>
-                            <td>
-                                <p id="formajugadoresN">Normal</p>
-                            </td>
-                            <td>100.000.000 € </td>
-                        </tr>
-                        <tr>
-                            <td><img src="imagenes/alaba.jpeg" class="imagenjugadores"> </td>
-                            <td>David </td>
-                            <td>Alaba</td>
-                            <td>31 años </td>
-                            <td>Defensa </td>
-                            <td>
-                                <p id="formajugadoresE">Excelente</p>
-                            </td>
-                            <td>40.000.000 € </td>
-                        </tr>
-                        <tr>
-                            <td><img src="imagenes/rudi.jpeg" class="imagenjugadores"> </td>
-                            <td>Antonio </td>
-                            <td>Rudiger</td>
-                            <td>30 años </td>
-                            <td>Defensa </td>
-                            <td>
-                                <p id="formajugadoresN">Normal</p>
-                            </td>
-                            <td>70.000.000 € </td>
-                        </tr>
-                        <tr>
-                            <td><img src="imagenes/tibu.jpeg" class="imagenjugadores"> </td>
-                            <td>Thibaut </td>
-                            <td>Courtois</td>
-                            <td>31 años </td>
-                            <td>Portero </td>
-                            <td>
-                                <p id="formajugadoresE">Excelente</p>
-                            </td>
-                            <td>50.000.000 € </td>
-                        </tr>
-                        <tr>
-                            <td><img src="imagenes/carva2.jpeg" class="imagenjugadores"> </td>
-                            <td>Dani </td>
-                            <td>Carvajal</td>
-                            <td>31 años </td>
-                            <td>Defensa </td>
-                            <td>
-                                <p id="formajugadoresM">Mala</p>
-                            </td>
-                            <td>30.000.000 € </td>
-                        </tr>
+                        {{/post.jugadores}}
                     </tbody>
                 </table>
             </div>
@@ -193,46 +96,47 @@
 
         <hr size color>
 
-        <div class="container-fluid" id="formulario">
+        <div class="container-fluid" id="formulario" >
             <h2>Nuevo jugador </h2>
-            <form role="form" id="formulariojugadores">
+            <form role="form" id="formulariojugadores" action="/post/new-jugador" method="post">
+                <input type="hidden" name="postId" value="{{ post.id }}">
                 <div class="form-group">
                     <label for="formFile" class="form-label">URL Imagen</label>
-                    <input type="text" class="form-control" placeholder="Escribir URL">
+                    <input type="text" name="URL" class="form-control" placeholder="Escribir URL">
                 </div>
                 <div class="row">
                     <div class="col">
                         <label for="name" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" placeholder="Escribir nombre">
+                        <input type="text" name="Nombre" class="form-control" placeholder="Escribir nombre">
                     </div>
                     <div class="col">
                         <label for="Apellidos" class="form-label">Apellidos</label>
-                        <input type="text" class="form-control" id="Apellidos" placeholder="Escribir apellidos">
+                        <input type="text" name="Apellidos" class="form-control" id="Apellidos" placeholder="Escribir apellidos">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <label for="Edad" class="form-label">Edad</label>
-                        <input type="number" class="form-control" id="Precio" placeholder="Escribir Edad">
+                        <input type="number" name="Edad" class="form-control" id="Precio" placeholder="Escribir Edad">
                     </div>
                     <div class="col">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlinePortero"
+                            <input class="form-check-input" type="radio" name="Pos" id="inlinePortero"
                                 value="option1">
                             <label class="form-check-label" for="inlinePortero">Portero</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineDefensa"
+                            <input class="form-check-input" type="radio" name="Pos" id="inlineDefensa"
                                 value="option1">
                             <label class="form-check-label" for="inlineDefensa">Defensa</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                            <input class="form-check-input" type="radio" name="Pos"
                                 id="inlineMediocentro" value="option1">
                             <label class="form-check-label" for="inlineMediocentro">Mediocentro</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineDelantero"
+                            <input class="form-check-input" type="radio" name="Pos" id="inlineDelantero"
                                 value="option1">
                             <label class="form-check-label" for="inlineDelantero">Delantero</label>
                         </div>
@@ -241,7 +145,7 @@
                 <div class="row">
                     <div class="col">
                         <p>Selecione la forma del jugador</p>
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <select class="form-select form-select-sm" name="Forma" aria-label=".form-select-sm example">
                             <option selected>opciones</option>
                             <option value="1" id="formajugadoresE">Excelente</option>
                             <option value="2" id="formajugadoresN">Normal</option>
@@ -252,7 +156,7 @@
                     <div class="col">
 
                         <label for="Precio" class="form-label">Precio</label>
-                        <input type="number" class="form-control" id="Precio" placeholder="Escribir precio"
+                        <input type="number" class="form-control" name="Precio" id="Precio" placeholder="Escribir precio"
                             aria-describedby="preciohelp">
                         <div id="preciohelp" class="form-text">El numero esta en millones de euros</div>
 
