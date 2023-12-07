@@ -38,18 +38,22 @@ export function getPost(id){
     return posts.get(id);
 }
 
+
 export function addPlayerToPost(id, jugador) {
     let post = getPost(id);
     if (post) {
-        console.log('bien');
         post.jugadores.push(jugador);
     } else {
         console.error(post);
     }
 }
+export function getJugadores(id){
+    let post = getPost(id);
+    return post.jugadores;
+}
 
-addPlayerToPost(0,{URL: "https://images.daznservices.com/di/library/DAZN_News/30/74/jude-bellingham_1v0ikyvz183qp1twmjf330sl1i.png?t=859595770&w=800", Nombre: "Jude", Apellidos: "Bellingham", Edad: 20, Pos: "Mediocentro", Forma:"Excellente", Precio: 150})
-addPlayerToPost(0,{URL: "https://images.daznservices.com/di/library/DAZN_News/cd/c8/vini-jr_1kdanf6c7ibtb169zbibss8rn0.png?t=1483924475", Nombre: "Vinicius", Apellidos: "Junior", Edad: 22, Pos: "Delantero", Forma:"Normal", Precio: 15});
+addPlayerToPost('0',{URL: "https://images.daznservices.com/di/library/DAZN_News/30/74/jude-bellingham_1v0ikyvz183qp1twmjf330sl1i.png?t=859595770&w=800", Nombre: "Jude", Apellidos: "Bellingham", Edad: 20, Pos: "Mediocentro", Forma:"Excellente", Precio: 150})
+addPlayerToPost('0',{URL: "https://images.daznservices.com/di/library/DAZN_News/cd/c8/vini-jr_1kdanf6c7ibtb169zbibss8rn0.png?t=1483924475", Nombre: "Vinicius", Apellidos: "Junior", Edad: 22, Pos: "Delantero", Forma:"Normal", Precio: 15});
 
 //link, equipo, estadio, dia(opciones), mes(opciones), anyo, titulos, descripcion
 

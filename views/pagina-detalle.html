@@ -98,7 +98,7 @@
 
         <div class="container-fluid" id="formulario" >
             <h2>Nuevo jugador </h2>
-            <form role="form" id="formulariojugadores" action="/post/{{ post.id }}" method="post">
+            <form role="form" id="formulariojugadores" action="/post/{{post.id}}" method="post">
                 <div class="form-group">
                     <label for="formFile" class="form-label">URL Imagen</label>
                     <input type="text" name="URL" class="form-control" placeholder="Escribir URL">
@@ -120,23 +120,20 @@
                     </div>
                     <div class="col">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Pos" id="inlinePortero"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="Pos" id="inlinePortero"value="Portero">
                             <label class="form-check-label" for="inlinePortero">Portero</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Pos" id="inlineDefensa"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="Pos" id="inlineDefensa" value="Defensa">
                             <label class="form-check-label" for="inlineDefensa">Defensa</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="Pos"
-                                id="inlineMediocentro" value="option1">
+                                id="inlineMediocentro" value="Mediocentro">
                             <label class="form-check-label" for="inlineMediocentro">Mediocentro</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Pos" id="inlineDelantero"
-                                value="option1">
+                            <input class="form-check-input" type="radio" name="Pos" id="inlineDelantero" value="Delantero">
                             <label class="form-check-label" for="inlineDelantero">Delantero</label>
                         </div>
                     </div>
@@ -146,9 +143,9 @@
                         <p>Selecione la forma del jugador</p>
                         <select class="form-select form-select-sm" name="Forma" aria-label=".form-select-sm example">
                             <option selected>opciones</option>
-                            <option value="1" id="formajugadoresE">Excelente</option>
-                            <option value="2" id="formajugadoresN">Normal</option>
-                            <option value="3" id="formajugadoresM">Mala</option>
+                            <option  id="formajugadoresE">Excelente</option>
+                            <option  id="formajugadoresN">Normal</option>
+                            <option  id="formajugadoresM">Mala</option>
                         </select>
 
                     </div>

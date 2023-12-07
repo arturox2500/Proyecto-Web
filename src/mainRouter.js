@@ -34,8 +34,11 @@ mainRouter.get('/post/:id', (req, res) => {
 mainRouter.post('/post/:id', (req, res) => {
     let {URL, Nombre, Apellidos, Edad, Pos, Forma, Precio } = req.body;
     const postId = req.params.id;
-    console.log(postId)
     mainService.addPlayerToPost(postId,{ URL, Nombre, Apellidos, Edad, Pos, Forma, Precio });
+    let post = mainService.getPost(postId);
+    res.render("pagina-detalle", {post});
+
+
 
 });
 
