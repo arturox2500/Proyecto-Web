@@ -98,29 +98,35 @@
 
         <div class="container-fluid" id="formulario" >
             <h2>Nuevo jugador </h2>
+            <ul id="error">
+                {{#errorMessageJugador}}
+                    <li>{{.}}</li>
+                {{/errorMessageJugador}}
+            </ul>
             <form role="form" id="formulariojugadores" action="/post/{{post.id}}" method="post">
+
                 <div class="form-group">
                     <label for="formFile" class="form-label">URL Imagen</label>
-                    <input type="text" name="URL" class="form-control" placeholder="Escribir URL">
+                    <input type="text" name="URL" value="{{FormData.URL}}"  class="form-control" placeholder="Escribir URL">
                 </div>
                 <div class="row">
                     <div class="col">
                         <label for="name" class="form-label">Nombre</label>
-                        <input type="text" name="Nombre" class="form-control" placeholder="Escribir nombre">
+                        <input type="text" name="Nombre" value="{{FormData.Nombre}}"  class="form-control" placeholder="Escribir nombre">
                     </div>
                     <div class="col">
                         <label for="Apellidos" class="form-label">Apellidos</label>
-                        <input type="text" name="Apellidos" class="form-control" id="Apellidos" placeholder="Escribir apellidos">
+                        <input type="text" name="Apellidos" value="{{FormData.Apellidos}}"  class="form-control" id="Apellidos" placeholder="Escribir apellidos">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <label for="Edad" class="form-label">Edad</label>
-                        <input type="number" name="Edad" class="form-control" id="Precio" placeholder="Escribir Edad">
+                        <input type="number" name="Edad" value="{{FormData.Edad}}"  class="form-control"  id="Precio" placeholder="Escribir Edad">
                     </div>
                     <div class="col">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Pos" id="inlinePortero"value="Portero">
+                            <input class="form-check-input"  type="radio" name="Pos" id="inlinePortero"value="Portero">
                             <label class="form-check-label" for="inlinePortero">Portero</label>
                         </div>
                         <div class="form-check form-check-inline">
@@ -128,7 +134,7 @@
                             <label class="form-check-label" for="inlineDefensa">Defensa</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Pos"
+                            <input class="form-check-input"  type="radio" name="Pos"
                                 id="inlineMediocentro" value="Mediocentro">
                             <label class="form-check-label" for="inlineMediocentro">Mediocentro</label>
                         </div>
@@ -141,18 +147,18 @@
                 <div class="row">
                     <div class="col">
                         <p>Selecione la forma del jugador</p>
-                        <select class="form-select form-select-sm" name="Forma" aria-label=".form-select-sm example">
-                            <option selected>opciones</option>
-                            <option  id="formajugadoresE">Excelente</option>
-                            <option  id="formajugadoresN">Normal</option>
-                            <option  id="formajugadoresM">Mala</option>
+                        <select class="form-select form-select-sm"  name="Forma" aria-label=".form-select-sm example">
+                            <option selected>{{FormData.Forma}}</option>
+                            <option>Excelente</option>
+                            <option>Normal</option>
+                            <option>Mala</option>
                         </select>
 
                     </div>
                     <div class="col">
 
                         <label for="Precio" class="form-label">Precio</label>
-                        <input type="number" class="form-control" name="Precio" id="Precio" placeholder="Escribir precio"
+                        <input type="number" class="form-control" value="{{FormData.Precio}}"  name="Precio" id="Precio" placeholder="Escribir precio"
                             aria-describedby="preciohelp">
                         <div id="preciohelp" class="form-text">El numero esta en millones de euros</div>
 

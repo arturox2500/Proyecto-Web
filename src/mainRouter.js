@@ -33,11 +33,16 @@ mainRouter.get('/post/:id', (req, res) => {
 
 mainRouter.post('/post/:id', (req, res) => {
     let {URL, Nombre, Apellidos, Edad, Pos, Forma, Precio } = req.body;
+    const validationErrorsJugador = mainService.validFormJugador(req.body);
     const postId = req.params.id;
+    if (validationErrorsJugador.length == 0){
     mainService.addPlayerToPost(postId,{ URL, Nombre, Apellidos, Edad, Pos, Forma, Precio });
     let post = mainService.getPost(postId);
     res.render("pagina-detalle", {post});
-
+    }else{
+        let post = mainService.getPost(postId);
+        res.render("pagina-detalle",  {post,errorMessageJugador:validationErrorsJugador,FormData: req.body}) 
+    }
 
 
 });

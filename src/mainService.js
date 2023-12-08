@@ -47,12 +47,8 @@ export function addPlayerToPost(id, jugador) {
         console.error(post);
     }
 }
-export function getJugadores(id){
-    let post = getPost(id);
-    return post.jugadores;
-}
 
-addPlayerToPost('0',{URL: "https://images.daznservices.com/di/library/DAZN_News/30/74/jude-bellingham_1v0ikyvz183qp1twmjf330sl1i.png?t=859595770&w=800", Nombre: "Jude", Apellidos: "Bellingham", Edad: 20, Pos: "Mediocentro", Forma:"Excellente", Precio: 150})
+addPlayerToPost('0',{URL: "https://images.daznservices.com/di/library/DAZN_News/30/74/jude-bellingham_1v0ikyvz183qp1twmjf330sl1i.png?t=859595770&w=800", Nombre: "Jude", Apellidos: "Bellingham", Edad: 20, Pos: "Mediocentro", Forma:"Excelente", Precio: 150})
 addPlayerToPost('0',{URL: "https://images.daznservices.com/di/library/DAZN_News/cd/c8/vini-jr_1kdanf6c7ibtb169zbibss8rn0.png?t=1483924475", Nombre: "Vinicius", Apellidos: "Junior", Edad: 22, Pos: "Delantero", Forma:"Normal", Precio: 15});
 
 //link, equipo, estadio, dia(opciones), mes(opciones), anyo, titulos, descripcion
@@ -90,5 +86,40 @@ export function validForm(body){
 
     return errorMessage;
 }
+//URL, Nombre, Apellidos, Edad, Pos(check), Forma(opciones), Precio
+export function validFormJugador(body){
+    let errorMessageJugador = [];
 
+    if (body.URL === "") {
+        errorMessageJugador.push("El campo URL es obligatorio");
+    }
+
+    if (body.Nombre === "") {
+        errorMessageJugador.push("El nombre del jugador es obligatorio");
+    }
+
+    if (body.Apellidos === "") {
+        errorMessageJugador.push("El apellido del jugador es obligatorio");
+    }
+
+    if (body.Edad === "") {
+        errorMessageJugador.push("La edad del jugador es obligatoria");
+    } else if(body.Edad<0){
+        errorMessageJugador.push("La edad del jugador debe ser mayor de 0");
+    }
+    if (!body.Pos) {
+        errorMessageJugador.push("El campo posicion es obligatorio");
+    } 
+     if (body.Forma === ""){
+        errorMessageJugador.push("El campo forma es obligatorio");
+    }
+
+    if (body.Precio === "") {
+        errorMessageJugador.push("El campo precio es obligatorio");
+    } else if (body.Precio<0){
+        errorMessageJugador.push("El precio del jugador debe ser mayor que 0");
+    }
+
+    return errorMessageJugador;
+}
 
