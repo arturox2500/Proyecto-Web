@@ -47,8 +47,14 @@
 
                     <p> {{post.descripcion}} </p>
                     <div>
-                        <button type="submit" class="btn btn-secondary" id="botonesdes">Borrar</button>
-                        <button type="submit" class="btn btn-secondary" id="botonesdes">Editar</button>
+                        <form action="/post/{{post.id}}/delete" method="get">
+                            <button type="submit" class="btn btn-secondary" id="botonesdes">Borrar</button>
+                        </form>
+                        <form action="/post/{{post.id}}/edit" method="get">
+                            <button type="submit" class="btn btn-secondary" id="botonesdes">Editar</button>
+                        </form>
+
+                        
                         <a href="/" class="btn btn-secondary" id="boton">Todos los elementos</a>
                     </div>
                 </div>

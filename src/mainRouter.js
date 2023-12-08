@@ -47,9 +47,26 @@ mainRouter.post('/post/:id', (req, res) => {
 
 });
 
-//router.get('/post/:id/delete', (req, res) => {
-//    mainService.deletePost(req.params.id);
-//    res.render('deleted_post');
-//});
+mainRouter.get('/post/:id/delete', (req, res) => {
+    mainService.deletePost(req.params.id);
+    res.redirect('/');
+});
+
+mainRouter.get('/post/:id/edit', (req, res) => {
+    const postId = req.params.id;
+    const post = mainService.getPost(postId);
+    res.render('pagina-editar-elemento',  { FormData: {...post, id: post.id} });
+});
+
+mainRouter.post('/post/:id/edit', (req, res) => {
+    const postId = req.params.id;
+    const { link, equipo, estadio, dia, mes, anyo, titulos, descripcion } = req.body;
+
+    // Update the existing element with the new values
+    mainService.editPost(postId, { link, equipo, estadio, dia, mes, anyo, titulos, descripcion });
+
+    // Redirect to the details page or any other appropriate page
+    res.redirect(`/post/${postId}`);
+});
 
 export default mainRouter;
