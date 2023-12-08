@@ -24,6 +24,7 @@ export function addPost(post) {
     post.id = id.toString();
     post.jugadores = [];
     posts.set(post.id, post);
+    return id
 }
 
 export function deletePost(id){

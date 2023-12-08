@@ -10,12 +10,13 @@ mainRouter.get("/", (req, res)=>{
 
 mainRouter.post('/new-elem', (req, res) => {
 
-    let { link, equipo, estadio, dia, mes, anyo, titulos, descripcion} = req.body;
+    let { link, equipo, estadio, dia, mes, anyo, titulos, descripcion } = req.body;
     const validationErrors = mainService.validForm(req.body);
     if (validationErrors.length == 0){
-        mainService.addPost({ link, equipo, estadio, dia, mes, anyo, titulos, descripcion });
+
+        const postId = mainService.addPost({ link, equipo, estadio, dia, mes, anyo, titulos, descripcion });
         const posts = mainService.getPosts();
-        res.render("pagina", { posts });
+        res.redirect(`/post/${postId}`);
     }
     else{
         res.render("pagina-nuevo-elemento", {errorMessage:validationErrors, FormData: req.body})
