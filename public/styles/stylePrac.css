@@ -6,6 +6,11 @@
     padding-top: 20px;
     color: red;
  }
+ #botones{
+    display: flex;
+    gap: 10px;
+    margin-block: 5px;
+ }
 .imagenjugadores {
     width: 90px;
     height: 50px;
@@ -25,17 +30,6 @@
     margin-block: 50px;
 }
 
-#formajugadoresE {
-    color: rgb(9, 222, 9);
-}
-
-#formajugadoresN {
-    color: rgb(222, 246, 5);
-}
-
-#formajugadoresM {
-    color: rgb(232, 3, 3);
-}
 
 #fondodepantalla {
     background-color: white;
@@ -64,9 +58,7 @@
     height: 6.122vh;
 }
 
-#botonesdes {
-    margin-block: 5px;
-}
+
 
 .footer{
     background-color: beige;
