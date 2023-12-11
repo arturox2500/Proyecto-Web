@@ -1,5 +1,5 @@
 import express from "express";
-import * as mainService from "./mainService.js"
+import * as mainService from "./equipoService.js"
 // Equipos
 const mainRouter = express.Router();
 
