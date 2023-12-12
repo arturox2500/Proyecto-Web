@@ -63,11 +63,23 @@ mainRouter.post('/post/:id/edit', (req, res) => {
     const postId = req.params.id;
     const { link, equipo, estadio, dia, mes, anyo, titulos, descripcion } = req.body;
 
-    // Update the existing element with the new values
-    mainService.editPost(postId, { link, equipo, estadio, dia, mes, anyo, titulos, descripcion });
+    const validationErrors = mainService.validForm(req.body);
+    if (validationErrors.length == 0){
+        
 
-    // Redirect to the details page or any other appropriate page
-    res.redirect(`/post/${postId}`);
+        // Update the existing element with the new values
+        mainService.editPost(postId, { link, equipo, estadio, dia, mes, anyo, titulos, descripcion });
+
+        // Redirect to the details page or any other appropriate page
+        res.redirect(`/post/${postId}`);
+    }
+    else{
+        const post = mainService.getPost(req.params.id);
+
+        res.render('pagina-editar-elemento', { errorMessage: validationErrors, FormData: {...req.body, id: post.id} })
+    }
+
+    
 });
 
 export default mainRouter;
