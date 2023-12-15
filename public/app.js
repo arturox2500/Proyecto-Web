@@ -23,9 +23,9 @@ async function loadElements() {
     const nextTo = to + NUM_RESULTS;
 
     const nextResponse = await fetch(`/equipos?from=${nextFrom}&to=${nextTo}`);
-    const masEquipos1 = await nextResponse.text();
+    const nextEquipos = await nextResponse.text();
 
-    if (masEquipos1.trim() === "") {      
+    if (nextEquipos.trim() === "") {      
         noMoreElements = true;
         document.getElementById("cargar").style.display = "none";
 
