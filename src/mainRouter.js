@@ -1,12 +1,24 @@
 import express from "express";
 import * as mainService from "./equipoService.js"
+import { getPosts } from './equipoService.js';
 // Equipos
 const mainRouter = express.Router();
 
 mainRouter.get("/", (req, res)=>{
-    const posts = mainService.getPosts();
+    const posts = getPosts(0,3);
+
     res.render('pagina', { posts });
 })
+
+mainRouter.get('/equipos', (req, res) => {
+
+    const from = parseInt(req.query.from);
+    const to = parseInt(req.query.to);
+    const posts = getPosts(from,to);
+
+    res.render('equipos', { posts });
+});
+
 
 mainRouter.post('/new-elem', (req, res) => {
 

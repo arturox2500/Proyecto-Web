@@ -1,0 +1,26 @@
+{{#posts}}
+                <div class="equipo-wrapper">
+                    <div class="equipo-div">
+                        <div class="equipo-img">
+                            <img src={{link}} alt="logo {{equipo}}">
+                        </div>
+                        <div class="equipo-text">
+                            <h4>{{equipo}}</h4>
+                        </div>
+
+
+                    </div>
+
+                    <div class="equipo-info">
+                        <div class="eq-texto">
+                            <p><b>Estadio: </b>{{estadio}}</p>
+                            <p><b>Fecha de Fundación: </b>{{dia}} de {{mes}} de {{anyo}}</p>
+                            <p><b>Número de Títulos de Liga: </b>{{titulos}}</p>
+                        </div>
+                        <div class="eq-boton">
+                            <a href="post/{{id}}" class="btn btn-secondary btn-sm" id="boton">Mas info</a>
+                        </div>
+                    </div>
+
+                </div>
+{{/posts}}
