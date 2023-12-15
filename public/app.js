@@ -3,8 +3,7 @@ let loadMoreRequests = 0;
 let noMoreElements = false; 
 
 async function loadElements() {
-    if (noMoreElements) {
-        
+    if (noMoreElements) {      
         return;
     }
 
@@ -17,12 +16,19 @@ async function loadElements() {
 
     const listaEquipos = document.getElementById("listaEquipos");
 
-    if (masEquipos.trim() === "") {
-        
+    listaEquipos.innerHTML += masEquipos;
+    loadMoreRequests++;
+    
+    const nextFrom = from + NUM_RESULTS;
+    const nextTo = to + NUM_RESULTS;
+
+    const nextResponse = await fetch(`/equipos?from=${nextFrom}&to=${nextTo}`);
+    const masEquipos1 = await nextResponse.text();
+
+    if (masEquipos1.trim() === "") {      
         noMoreElements = true;
         document.getElementById("cargar").style.display = "none";
-    } else { 
-        listaEquipos.innerHTML += masEquipos;
-        loadMoreRequests++;
+
     }
+
 }
