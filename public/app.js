@@ -1,5 +1,5 @@
 const NUM_RESULTS = 3;
-let loadMoreRequests = 0;
+let loadMoreRequests = 1;
 let noMoreElements = false; 
 
 async function loadElements() {
@@ -32,3 +32,7 @@ async function loadElements() {
     }
 
 }
+
+
+
+

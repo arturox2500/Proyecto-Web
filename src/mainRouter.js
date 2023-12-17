@@ -5,7 +5,7 @@ import { getPosts } from './equipoService.js';
 const mainRouter = express.Router();
 
 mainRouter.get("/", (req, res)=>{
-    const posts = getPosts(0,3);
+    const posts = getPosts(0,6);
 
     res.render('pagina', { posts });
 })
