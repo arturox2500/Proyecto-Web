@@ -34,5 +34,25 @@ async function loadElements() {
 }
 
 
+document.addEventListener('DOMContentLoaded', function () {
+   // Select the search input
+   const searchInput = document.getElementById('searchInput');
 
+   // Attach an event listener to the input
+   searchInput.addEventListener('input', searchTeams);
+});
 
+function searchTeams() {
+   const input = document.getElementById('searchInput').value.toLowerCase();
+   const teams = document.getElementsByClassName('equipo-wrapper');
+
+   for (const team of teams) {
+      const teamName = team.getElementsByTagName('h4')[0].innerText.toLowerCase();
+
+      if (teamName.includes(input)) {
+         team.style.display = ''; // Show the team
+      } else {
+         team.style.display = 'none'; // Hide the team
+      }
+   }
+}

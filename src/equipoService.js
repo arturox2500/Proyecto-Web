@@ -44,6 +44,10 @@ export function getPost(id){
     return posts.get(id);
 }
 
+export function getMap(){
+    return posts;
+}
+
 
 export function addPlayerToPost(id, jugador) {
     let post = getPost(id);
