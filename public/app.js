@@ -56,3 +56,47 @@ function searchTeams() {
       }
    }
 }
+async function checkNommbreEquipoAvailability() {
+
+   let usernameInput = document.getElementById('NombreEquipo');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availableNombreEquipo?NombreEquipo=${username}`);
+
+   const responseObj = await response.json();
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p>Nombre no disponible</p>'
+      }else{
+         message='<p>Nombre  disponible</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajeNombreEquipo');
+   messageDiv.innerHTML = message;
+
+}
+async function checkanyoFundacionAvailability() {
+
+   let usernameInput = document.getElementById('anyoFundacion');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availableanyoFundacion?anyoFundacion=${username}`);
+
+   const responseObj = await response.json();
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p>Fecha NO valida</p>'
+      }else{
+         message='<p>Fecha adecuada</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajeanyoFundacion');
+   messageDiv.innerHTML = message;
+
+}

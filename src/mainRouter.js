@@ -94,5 +94,35 @@ mainRouter.post('/post/:id/edit', (req, res) => {
 
     
 });
+mainRouter.get('/availableNombreEquipo', (req, res) => {
 
+    let arrayNombres= mainService.ObtenerNombreEquipos();
+
+    for( let i=0;i<arrayNombres.length;i++){
+        arrayNombres[i]=arrayNombres[i].toLowerCase();
+
+    }
+
+    let username = req.query.NombreEquipo;
+    username=username.toLowerCase();
+
+    let availableUsername = arrayNombres.indexOf(username) === -1;
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
+mainRouter.get('/availableanyoFundacion', (req, res) => {
+
+    let username = req.query.anyoFundacion;
+
+
+    let availableUsername = (username > 1800);
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
 export default mainRouter;

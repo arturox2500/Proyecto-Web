@@ -144,4 +144,9 @@ export function validFormJugador(body){
 
     return errorMessageJugador;
 }
+export function ObtenerNombreEquipos(){
+    const NombreEquiposArray = Array.from(posts.values(), post => post.equipo);
+
+    return NombreEquiposArray
+}
 
