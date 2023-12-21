@@ -35,10 +35,7 @@ async function loadElements() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-   // Select the search input
-   const searchInput = document.getElementById('searchInput');
-
-   // Attach an event listener to the input
+   const searchInput = document.getElementById('searchInput'); 
    searchInput.addEventListener('input', searchTeams);
 });
 
@@ -64,8 +61,6 @@ async function searchTeams() {
 }
 
 function updateDisplayedTeams(teams, searchQuery) {
-   // Assuming you have a container div with the id "listaEquipos" to append the teams
-   
    const equiposWrapper = document.getElementById('listaEquipos');
    let match = searchQuery.toLowerCase();
    if (match!= ""){

@@ -34,7 +34,7 @@ mainRouter.get('/equipos', (req, res) => {
         allTeamsMap.forEach((team, teamId) => {
             // Check if the team name includes the search query
             if (team.equipo.toLowerCase().includes(searchQuery)) {
-                // If yes, add it to the auxMap
+                
                 auxMap.set(teamId, team);
             }
         });
@@ -153,14 +153,4 @@ mainRouter.get('/availableanyoFundacion', (req, res) => {
     res.json(response);
 });
 
-mainRouter.get('/search', (req, res) => {
-    let search = req.query.query;
-    console.log(search);
-
-
-    // let response = {
-    //     available: availableUsername
-    // }
-    // res.json(response);
-});
 export default mainRouter;
