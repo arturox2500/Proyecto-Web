@@ -42,20 +42,82 @@ document.addEventListener('DOMContentLoaded', function () {
    searchInput.addEventListener('input', searchTeams);
 });
 
-function searchTeams() {
-   const input = document.getElementById('searchInput').value.toLowerCase();
-   const teams = document.getElementsByClassName('equipo-wrapper');
+async function searchTeams() {
+   const searchQuery = document.getElementById('searchInput').value;
 
-   for (const team of teams) {
-      const teamName = team.getElementsByTagName('h4')[0].innerText.toLowerCase();
-
-      if (teamName.includes(input)) {
-         team.style.display = ''; // Show the team
-      } else {
-         team.style.display = 'none'; // Hide the team
-      }
+   // Perform the search using AJAX with a GET request to "/equipos"
+   const response = await fetch(`/equipos?query=${searchQuery}`);
+   
+   if (response.ok) {
+       // Request was successful
+       const result = await response.json();
+       console.log(result);
+       if (searchQuery.trim() === "") {
+         loadMoreRequests = 1;
+     }
+       // Update the displayed teams based on the server response
+       updateDisplayedTeams(result, searchQuery);
+   } else {
+       // Request failed
+       console.error('Search request failed');
    }
 }
+
+function updateDisplayedTeams(teams, searchQuery) {
+   // Assuming you have a container div with the id "listaEquipos" to append the teams
+   
+   const equiposWrapper = document.getElementById('listaEquipos');
+   let match = searchQuery.toLowerCase();
+   if (match!= ""){
+      document.getElementById("cargar").style.display = "none";
+   } else{
+      document.getElementById("cargar").style.display = "";
+   }
+
+
+   console.log(equiposWrapper);
+   console.log(match);
+
+   // Clear existing content in the container
+   equiposWrapper.innerHTML = '';
+
+   // Check if teams has properties
+   if (teams) {
+       for (const teamId in teams) {
+           if (teams.hasOwnProperty(teamId)) {
+               const teamDetails = teams[teamId];
+
+               // Use the teamDetails to update the HTML using your template
+               const teamHTML = `
+               <div class="equipo-wrapper">
+                  <div class="equipo-div">
+                     <div class="equipo-img">
+                        <img src="${teamDetails.link}" alt="logo ${teamDetails.equipo}">
+                     </div>
+                     <div class="equipo-text">
+                        <h4>${teamDetails.equipo}</h4>
+                     </div>
+                  </div>
+                  <div class="equipo-info">
+                     <div class="eq-texto">
+                        <p><b>Estadio: </b>${teamDetails.estadio}</p>
+                        <p><b>Fecha de Fundación: </b>${teamDetails.dia} de ${teamDetails.mes} de ${teamDetails.anyo}</p>
+                        <p><b>Número de Títulos de Liga: </b>${teamDetails.titulos}</p>
+                     </div>
+                     <div class="eq-boton">
+                        <a href="post/${teamDetails.id}" class="btn btn-secondary btn-sm" id="boton">Mas info</a>
+                     </div>
+                  </div>
+               </div>
+           `;
+
+               // Append the team HTML to the container
+               equiposWrapper.innerHTML += teamHTML;
+           }
+       }
+   }
+}
+
 async function checkNommbreEquipoAvailability() {
 
    let usernameInput = document.getElementById('NombreEquipo');
@@ -65,6 +127,7 @@ async function checkNommbreEquipoAvailability() {
    const response = await fetch(`/availableNombreEquipo?NombreEquipo=${username}`);
 
    const responseObj = await response.json();
+   console.log(responseObj)
 
    let message = responseObj.available;
 

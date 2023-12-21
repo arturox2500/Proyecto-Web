@@ -4,19 +4,46 @@ import { getPosts } from './equipoService.js';
 // Equipos
 const mainRouter = express.Router();
 
+let posts = getPosts(0,6);
+
 mainRouter.get("/", (req, res)=>{
-    const posts = getPosts(0,6);
+    const firstposts = getPosts(0,6);
+    posts = firstposts
 
     res.render('pagina', { posts });
 })
 
 mainRouter.get('/equipos', (req, res) => {
+    let searchQuery = req.query.query;
+    if (searchQuery != undefined){     
+        searchQuery = req.query.query.toLowerCase();  
+    }
 
-    const from = parseInt(req.query.from);
-    const to = parseInt(req.query.to);
-    const posts = getPosts(from,to);
+    if (searchQuery == undefined) {
+        const from = parseInt(req.query.from);
+        const to = parseInt(req.query.to);
+        posts = getPosts(from, to);
+        res.render('equipos', { posts });
+    } else if (searchQuery =="") {
+       let auxposts = getPosts(0, 6);;       
+       res.json(auxposts);
+    }else {
+        let allTeamsMap = mainService.getMap();
+        let auxMap = new Map();
+        
+        allTeamsMap.forEach((team, teamId) => {
+            // Check if the team name includes the search query
+            if (team.equipo.toLowerCase().includes(searchQuery)) {
+                // If yes, add it to the auxMap
+                auxMap.set(teamId, team);
+            }
+        });
+        const auxObject = Object.fromEntries(auxMap);
 
-    res.render('equipos', { posts });
+        
+        res.json(auxObject);
+
+    }
 });
 
 
@@ -124,5 +151,16 @@ mainRouter.get('/availableanyoFundacion', (req, res) => {
         available: availableUsername
     }
     res.json(response);
+});
+
+mainRouter.get('/search', (req, res) => {
+    let search = req.query.query;
+    console.log(search);
+
+
+    // let response = {
+    //     available: availableUsername
+    // }
+    // res.json(response);
 });
 export default mainRouter;
