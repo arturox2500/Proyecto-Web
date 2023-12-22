@@ -9,8 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"> </script>
     <link type="text/css" rel="stylesheet" href="\styles\styleNuevo.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-
+    <script src="app.js"></script>
 </head>
 
 <body>
@@ -25,22 +24,25 @@
             
             <div class="form-group">
                 <label for="formFile" class="form-label">URL imagen</label>
-                <input type="text" name="link" value="{{FormData.link}}"class="form-control" placeholder="Escribir URL">
+                <input type="text" name="link"  value="{{FormData.link}}" id="URL" oninput="checkURLAvailability()" class="form-control" placeholder="Escribir URL">
+                <div id="mensajeURL"></div>
             </div>
             <div class="row">
                 <label for="name" class="form-label">Nombre del club</label>
-                <input type="text" name="equipo" value="{{FormData.equipo}}"class="form-control imp" placeholder="Escribir nombre">
+                <input type="text" name="equipo" id="NombreEquipo" oninput="checkNombreEquipoAvailability()" value="{{FormData.equipo}}" class="form-control imp" placeholder="Escribir nombre">
+                <div id="mensajeNombreEquipo"></div>
             </div>
             <div class="row">
-                <label for="Edad" class="form-label">Nombre del estadio</label>
-                <input type="text" name="estadio" value="{{FormData.estadio}}"class="form-control imp" id="Edad" placeholder="Escribir estadio">
+                <label for="Estadio" class="form-label">Nombre del estadio</label>
+                <input type="text" name="estadio" value="{{FormData.estadio}}"class="form-control imp" id="Estadio" oninput="checkEstadioAvailability()" placeholder="Escribir estadio">
+                <div id="mensajeEstadio"></div>
             </div>
             <br>
             <div class="row">                
                 <p><strong> Fecha fundacion</strong></p>
                 <div class="col">
                     <p>Dia</p>
-                    <select name="dia" value="{{FormData.dia}}"class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <select name="dia" id="Dia" oninput="checkDiaAvailability()" value="{{FormData.dia}}"class="form-select form-select-sm" aria-label=".form-select-sm example">
                         <option selected>{{FormData.dia}}</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -74,11 +76,12 @@
                         <option value="30">30</option>
                         <option value="31">31</option>
                     </select>
+                    <div id="mensajeDia"></div>
                 </div>
                 <div class="col">
 
                     <p>Mes</p>
-                    <select name="mes" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <select name="mes" id="Mes" oninput="checkMesAvailability()" class="form-select form-select-sm" aria-label=".form-select-sm example">
                         <option selected>{{FormData.mes}}</option>
                         <option value="Enero">Enero</option>
                         <option value="Febrero">Febrero</option>
@@ -93,25 +96,28 @@
                         <option value="Noviembre">Noviembre</option>
                         <option value="Diciembre">Diciembre</option>
                     </select>
-
+                    <div id="mensajeMes"></div>
                 </div>
                 <div class="col">
                     <label for="año" class="form-label">Año</label>
-                    <input type="number" name="anyo" value="{{FormData.anyo}}"class="form-control" placeholder="Escribir Año">
+                    <input type="number" name="anyo" id="anyoFundacion" value="{{FormData.anyo}}" oninput="checkanyoFundacionAvailability()" class="form-control" placeholder="Escribir Año">
+                    <div id="mensajeanyoFundacion"></div>
                     </select>
 
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <label for="Edad" class="form-label">Titulos de Liga</label>
-                    <input type="number" name="titulos" value="{{FormData.titulos}}" class="form-control">
+                    <label for="Titulos" class="form-label">Titulos de Liga</label>
+                    <input type="number" name="titulos" id="Titulos" value="{{FormData.titulos}}" oninput="checkTitulosAvailability()" value="{{FormData.titulos}}" class="form-control">
+                    <div id="mensajeTitulos"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <label for="exampleFormControlTextarea1">Descripcion</label>
-                    <textarea class="form-control" name="descripcion" id="exampleFormControlTextarea1" rows="3">{{FormData.descripcion}}</textarea>
+                    <label for="Descripcion">Descripcion</label>
+                    <textarea class="form-control" name="descripcion" id="Descripcion" oninput="checkDescripcionAvailability()" rows="3">{{FormData.descripcion}}</textarea>
+                    <div id="mensajeDescripcion"></div> 
                 </div>
             </div>
             <div class="col-auto">
@@ -120,6 +126,7 @@
             </div>
         </form>
     </div>
+
 </body>
 
 </html>

@@ -112,7 +112,7 @@ function updateDisplayedTeams(teams, searchQuery) {
        }
    }
 }
-
+//////////////////////////////////////////Nuevo/editar//////////////////////////////////////////////////////////////
 async function checkNombreEquipoAvailability() {
 
    let usernameInput = document.getElementById('NombreEquipo');
@@ -288,6 +288,170 @@ async function checkURLAvailability() {
       }
 
    const messageDiv = document.getElementById('mensajeURL');
+   messageDiv.innerHTML = message;
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////Form Jugadores/////////////////////////////////////////////////////
+async function checkImagenAvailability() {
+
+   let usernameInput = document.getElementById('Imagen');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availableURL?URL=${username}`);
+
+   const responseObj = await response.json();
+   console.log(responseObj)
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p style="color: red;">Introduce una URL valida</p>'
+      }else{
+         message='<p>URL valida</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajeImagen');
+   messageDiv.innerHTML = message;
+
+}
+async function checkNombreJugadorAvailability() {
+
+   let usernameInput = document.getElementById('NombreJugador');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availableNombreEquipo?NombreEquipo=${username}`);
+
+   const responseObj = await response.json();
+   console.log(responseObj)
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p style="color: red;">Nombre no Valido</p>'
+      }else{
+         message='<p>Nombre  valido</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajeNombreJugador');
+   messageDiv.innerHTML = message;
+
+}
+async function checkApellidosAvailability() {
+
+   let usernameInput = document.getElementById('Apellidos');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availableApellidos?Apellidos=${username}`);
+
+   const responseObj = await response.json();
+   console.log(responseObj)
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p style="color: red;">Apellido no valido</p>'
+      }else{
+         message='<p>Apellido valido</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajeApellidos');
+   messageDiv.innerHTML = message;
+
+}
+async function checkEdadAvailability() {
+
+   let usernameInput = document.getElementById('Edad');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availableEdad?Edad=${username}`);
+
+   const responseObj = await response.json();
+   console.log(responseObj)
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p style="color: red;">Edad no Valida</p>'
+      }else{
+         message='<p>Edad valida</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajeEdad');
+   messageDiv.innerHTML = message;
+
+}
+async function checkPosAvailability() {
+
+   let usernameInput = document.getElementById('Pos');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availablePos?Pos=${username}`);
+
+   const responseObj = await response.json();
+   console.log(responseObj)
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p style="color: red;">Posicion sin insertar</p>'
+      }else{
+         message='<p style="color: green;">Posicion Valida</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajePos');
+   messageDiv.innerHTML = message;
+
+}
+async function checkFormaAvailability() {
+
+   let usernameInput = document.getElementById('Forma');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availableForma?Forma=${username}`);
+
+   const responseObj = await response.json();
+   console.log(responseObj)
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p style="color: red;">Forma no valida</p>'
+      }else{
+         message='<p>Forma valida</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajeForma');
+   messageDiv.innerHTML = message;
+
+}
+async function checkPrecioAvailability() {
+
+   let usernameInput = document.getElementById('Precio');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availablePrecio?Precio=${username}`);
+
+   const responseObj = await response.json();
+   console.log(responseObj)
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p style="color: red;">Precio no valido</p>'
+      }else{
+         message='<p>Precio valido</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajePrecio');
    messageDiv.innerHTML = message;
 
 }

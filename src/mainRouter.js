@@ -121,12 +121,10 @@ mainRouter.post('/post/:id/edit', (req, res) => {
 
     
 });
+///////////////////////////////////////////////////nuevo/editar//////////////////////////////////////////////////////
 mainRouter.get('/availableURL', (req, res) => {
 
-
-
     let username = req.query.URL;
-    console.log(username);
 
 
     let availableUsername = ((mainService.ComprobarURL(username))&&(username!==''));
@@ -136,6 +134,7 @@ mainRouter.get('/availableURL', (req, res) => {
     }
     res.json(response);
 });
+
 mainRouter.get('/availableNombreEquipo', (req, res) => {
 
     let arrayNombres= mainService.ObtenerNombreEquipos();
@@ -230,5 +229,90 @@ mainRouter.get('/availableDescripcion', (req, res) => {
     }
     res.json(response);
 });
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////Jugador//////////////////////////////////////////////////////
+mainRouter.get('/availableURL', (req, res) => {
 
+    let username = req.query.URL;
+
+
+    let availableUsername = ((mainService.ComprobarURL(username))&&(username!==''));
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
+mainRouter.get('/availableNombreEquipo', (req, res) => {
+
+    let username = req.query.NombreEquipo;
+
+    let availableUsername = (username !== '');
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
+mainRouter.get('/availableApellidos', (req, res) => {
+
+    let username = req.query.Apellidos;
+
+    let availableUsername = (username !== '');
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
+mainRouter.get('/availableEdad', (req, res) => {
+
+    let num = req.query.Edad;
+
+
+
+    let availableUsername = (num > -1)&&(num!=='');
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
+mainRouter.get('/availablePos', (req, res) => {
+
+    let num = req.query.Pos;
+
+
+
+    let availableUsername = (num!=='');
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
+mainRouter.get('/availableForma', (req, res) => {
+
+    let num = req.query.Forma;
+
+    let availableUsername = (num!=='');
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
+mainRouter.get('/availablePrecio', (req, res) => {
+
+    let num = req.query.Precio;
+
+
+
+    let availableUsername = (num > -1)&&(num!=='');
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
 export default mainRouter;
