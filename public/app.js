@@ -33,6 +33,29 @@ async function loadElements() {
 
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+
+   const formaElements = document.querySelectorAll('.forma-indicator');
+
+   formaElements.forEach(function (element) {
+       const formaValue = element.textContent;
+
+       switch (formaValue) {
+           case 'Excelente':
+               element.style.color = 'green'; 
+               break;
+           case 'Normal':
+               element.style.color = 'orange'; 
+               break;
+           case 'Mala':
+               element.style.color = 'red'; 
+               break;
+           default:
+               break;
+       }
+   });
+});
+
 
 document.addEventListener('DOMContentLoaded', function () {
    const searchInput = document.getElementById('searchInput'); 
@@ -42,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
 async function searchTeams() {
    const searchQuery = document.getElementById('searchInput').value;
 
-   // Perform the search using AJAX with a GET request to "/equipos"
+   
    const response = await fetch(`/equipos?query=${searchQuery}`);
    
    if (response.ok) {
@@ -52,7 +75,7 @@ async function searchTeams() {
        if (searchQuery.trim() === "") {
          loadMoreRequests = 1;
      }
-       // Update the displayed teams based on the server response
+       // Update 
        updateDisplayedTeams(result, searchQuery);
    } else {
        // Request failed
@@ -82,7 +105,6 @@ function updateDisplayedTeams(teams, searchQuery) {
            if (teams.hasOwnProperty(teamId)) {
                const teamDetails = teams[teamId];
 
-               // Use the teamDetails to update the HTML using your template
                const teamHTML = `
                <div class="equipo-wrapper">
                   <div class="equipo-div">

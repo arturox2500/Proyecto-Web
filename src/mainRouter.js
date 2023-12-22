@@ -59,12 +59,8 @@ mainRouter.post('/new-elem', (req, res) => {
         res.redirect(`/post/${postId}`);
     }
     else{
-        res.render("pagina-nuevo-elemento", {errorMessage:validationErrors, FormData: req.body})
-    }
-
-    
-
-    
+        res.render("pagina-nuevo-elemento", {editMode: false, errorMessage:validationErrors, FormData: req.body})
+    }    
 });
 
 mainRouter.get('/post/:id', (req, res) => {
@@ -96,7 +92,7 @@ mainRouter.get('/post/:id/delete', (req, res) => {
 mainRouter.get('/post/:id/edit', (req, res) => {
     const postId = req.params.id;
     const post = mainService.getPost(postId);
-    res.render('pagina-editar-elemento',  { FormData: {...post, id: post.id} });
+    res.render('pagina-nuevo-elemento',  {editMode: true, FormData: {...post, id: post.id} });
 });
 
 mainRouter.post('/post/:id/edit', (req, res) => {
@@ -116,7 +112,7 @@ mainRouter.post('/post/:id/edit', (req, res) => {
     else{
         const post = mainService.getPost(req.params.id);
 
-        res.render('pagina-editar-elemento', { errorMessage: validationErrors, FormData: {...req.body, id: post.id} })
+        res.render('pagina-nuevo-elemento', {editMode: true, errorMessage: validationErrors, FormData: {...req.body, id: post.id} })
     }
 
     
@@ -243,6 +239,8 @@ mainRouter.get('/availableURL', (req, res) => {
     }
     res.json(response);
 });
+
+
 mainRouter.get('/availableNombreEquipo', (req, res) => {
 
     let username = req.query.NombreEquipo;

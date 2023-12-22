@@ -9,14 +9,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"> </script>
     <link type="text/css" rel="stylesheet" href="\styles\styleNuevo.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="/app.js"></script>
 
-    <script src="app.js"></script>
+
+    
+
 </head>
 
 <body>
     <div id="containerform">    
-        <form role="form" id="formulario" action="/new-elem" method="post">
-            <h3>Nuevo Equipo</h3>
+        <form role="form" id="formulario" action="{{#editMode}}/post/{{FormData.id}}/edit{{/editMode}}{{^editMode}}/new-elem{{/editMode}}" method="post">
+            <h3>{{#editMode}}Editar Elemento{{/editMode}}{{^editMode}}Nuevo Elemento{{/editMode}}</h3>
             <ul id="errors">
                 {{#errorMessage}}
                     <li>{{.}}</li>
@@ -126,7 +129,7 @@
             </div>
         </form>
     </div>
-    <script src="app.js"></script>
+    
 </body>
 
 </html>
