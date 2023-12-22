@@ -113,7 +113,7 @@ function updateDisplayedTeams(teams, searchQuery) {
    }
 }
 
-async function checkNommbreEquipoAvailability() {
+async function checkNombreEquipoAvailability() {
 
    let usernameInput = document.getElementById('NombreEquipo');
 
@@ -127,12 +127,34 @@ async function checkNommbreEquipoAvailability() {
    let message = responseObj.available;
 
       if(message===false){ 
-       message='<p>Nombre no disponible</p>'
+       message='<p style="color: red;">Nombre no disponible</p>'
       }else{
          message='<p>Nombre  disponible</p>'
       }
 
    const messageDiv = document.getElementById('mensajeNombreEquipo');
+   messageDiv.innerHTML = message;
+
+}
+async function checkEstadioAvailability() {
+
+   let usernameInput = document.getElementById('Estadio');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availableNombreEstadio?Estadio=${username}`);
+
+   const responseObj = await response.json();
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p style="color: red;">Estadio no disponible</p>'
+      }else{
+         message='<p>Estadio disponible</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajeEstadio');
    messageDiv.innerHTML = message;
 
 }
@@ -149,12 +171,123 @@ async function checkanyoFundacionAvailability() {
    let message = responseObj.available;
 
       if(message===false){ 
-       message='<p>Fecha NO valida</p>'
+       message='<p style="color: red;" >Fecha NO valida</p>'
       }else{
          message='<p>Fecha adecuada</p>'
       }
 
    const messageDiv = document.getElementById('mensajeanyoFundacion');
+   messageDiv.innerHTML = message;
+
+}
+async function checkTitulosAvailability() {
+
+   let usernameInput = document.getElementById('Titulos');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availableTitulos?Titulos=${username}`);
+
+   const responseObj = await response.json();
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p style="color: red;" >Titulos NO validos</p>'
+      }else{
+         message='<p>Titulos adecuados</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajeTitulos');
+   messageDiv.innerHTML = message;
+
+}
+async function checkDiaAvailability() {
+
+   let usernameInput = document.getElementById('Dia');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availableDia?Dia=${username}`);
+
+   const responseObj = await response.json();
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p style="color: red;" >Dia NO valido</p>'
+      }else{
+         message='<p>Dia adecuado</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajeDia');
+   messageDiv.innerHTML = message;
+
+}
+async function checkMesAvailability() {
+
+   let usernameInput = document.getElementById('Mes');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availableMes?Mes=${username}`);
+
+   const responseObj = await response.json();
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p style="color: red;" >Mes NO valido</p>'
+      }else{
+         message='<p>Mes adecuado</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajeMes');
+   messageDiv.innerHTML = message;
+
+}
+async function checkDescripcionAvailability() {
+
+   let usernameInput = document.getElementById('Descripcion');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availableDescripcion?Des=${username}`);
+
+   const responseObj = await response.json();
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p style="color: red;">Descripcion no valida(50-500)</p>'
+      }else{
+         message='<p>Descripcion adecuada</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajeDescripcion');
+   messageDiv.innerHTML = message;
+
+}
+async function checkURLAvailability() {
+
+   let usernameInput = document.getElementById('URL');
+
+   let username = usernameInput.value;
+
+   const response = await fetch(`/availableURL?URL=${username}`);
+
+   const responseObj = await response.json();
+   console.log(responseObj)
+
+   let message = responseObj.available;
+
+      if(message===false){ 
+       message='<p style="color: red;">Introduce una URL valida</p>'
+      }else{
+         message='<p>URL valida</p>'
+      }
+
+   const messageDiv = document.getElementById('mensajeURL');
    messageDiv.innerHTML = message;
 
 }

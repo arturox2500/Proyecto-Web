@@ -121,6 +121,21 @@ mainRouter.post('/post/:id/edit', (req, res) => {
 
     
 });
+mainRouter.get('/availableURL', (req, res) => {
+
+
+
+    let username = req.query.URL;
+    console.log(username);
+
+
+    let availableUsername = ((mainService.ComprobarURL(username))&&(username!==''));
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
 mainRouter.get('/availableNombreEquipo', (req, res) => {
 
     let arrayNombres= mainService.ObtenerNombreEquipos();
@@ -131,9 +146,25 @@ mainRouter.get('/availableNombreEquipo', (req, res) => {
     }
 
     let username = req.query.NombreEquipo;
+    let Primera=username;
     username=username.toLowerCase();
 
-    let availableUsername = arrayNombres.indexOf(username) === -1;
+    let availableUsername = ((arrayNombres.indexOf(username) === -1) && (mainService.PrimeraLetra(Primera[0])));
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
+mainRouter.get('/availableNombreEstadio', (req, res) => {
+
+    let arrayNombres= mainService.ObtenerNombreEstadios();
+
+
+    let username = req.query.Estadio;
+    let Primera=username;
+
+    let availableUsername = ((arrayNombres.indexOf(username) === -1) && (mainService.PrimeraLetra(Primera[0])));
 
     let response = {
         available: availableUsername
@@ -142,10 +173,57 @@ mainRouter.get('/availableNombreEquipo', (req, res) => {
 });
 mainRouter.get('/availableanyoFundacion', (req, res) => {
 
-    let username = req.query.anyoFundacion;
+    let num = req.query.anyoFundacion;
 
 
-    let availableUsername = (username > 1800);
+
+    let availableUsername = (num > 1800)&&(num!=='');
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
+mainRouter.get('/availableTitulos', (req, res) => {
+
+    let num = req.query.Titulos;
+
+
+
+    let availableUsername = (num > -1)&&(num!=='');
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
+mainRouter.get('/availableDia', (req, res) => {
+
+    let num = req.query.Dia;
+
+    let availableUsername = (num >= 1 && num <= 31)&&(num!=='');
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
+mainRouter.get('/availableMes', (req, res) => {
+
+    let num = req.query.Mes;
+
+    let availableUsername = (num!=='');
+
+    let response = {
+        available: availableUsername
+    }
+    res.json(response);
+});
+mainRouter.get('/availableDescripcion', (req, res) => {
+
+    let Des = req.query.Des;
+
+    let availableUsername = ((Des.length >= 50 && Des.length <= 500) && (Des!==''));
 
     let response = {
         available: availableUsername

@@ -149,4 +149,29 @@ export function ObtenerNombreEquipos(){
 
     return NombreEquiposArray
 }
+export function ObtenerNombreEstadios(){
+    const NombreEquiposArray = Array.from(posts.values(), post => post.estadio);
+
+    return NombreEquiposArray
+}
+export function PrimeraLetra(a){
+    if(a===undefined){
+      return false
+    }else{
+    try{
+        return (a===a.toUpperCase());
+    }catch(error){
+        return false;
+    }
+}
+}
+export function ComprobarURL(a){
+    try{
+        new URL (a);
+        return true;
+    }catch(error){
+        return false;
+    }
+}
+
 
