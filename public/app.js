@@ -73,7 +73,7 @@ async function searchTeams() {
    if (response.ok) {
        // Request was successful
        const result = await response.json();
-       console.log(result);
+       
        if (searchQuery.trim() === "") {
          loadMoreRequests = 1;
      }
@@ -94,9 +94,6 @@ function updateDisplayedTeams(teams, searchQuery) {
       document.getElementById("cargar").style.display = "";
    }
 
-
-   console.log(equiposWrapper);
-   console.log(match);
 
    // Clear existing content in the container
    equiposWrapper.innerHTML = '';
@@ -125,7 +122,7 @@ function updateDisplayedTeams(teams, searchQuery) {
                      </div>
                      <div class="eq-boton">
                         <a href="post/${teamDetails.id}" class="btn btn-secondary btn-sm" id="boton">Mas info</a>
-                        <button class="btn btn-secondary" id="botonFav${teamDetails.id}" onclick='Favoritos("${teamDetails.id}")'>*</button>
+                        <button class="btn btn-secondary fav-icon" id="botonFav{{id}}" onclick='Favoritos("{{id}}")'>♥</button>
                      </div>
                   </div>
                </div>
@@ -137,6 +134,8 @@ function updateDisplayedTeams(teams, searchQuery) {
        }
    }
 }
+
+
 
 
 async function Favoritos(ID) {   
@@ -155,19 +154,33 @@ cambiarcolorboton(equipo);
 async function MostrarFavoritos() {
    if(actfav==false){
       actfav=true;
-   }else{
-      actfav=false;
-   }
-
-      list=EquiposFavoritos.length;
+      document.getElementById("cargar").style.display = "none";  
       bool=actfav;
-      const response = await fetch(`/MostrarFav?list=${list}&bool=${bool}`);
-
+      const response = await fetch(`/MostrarFav?&bool=${bool}`);
       const masEquipos = await response.text();
+
   
       const listaEquipos = document.getElementById("listaEquipos");
-  
-      listaEquipos.innerHTML  = masEquipos;
+      if (masEquipos.trim() === "") {      
+         listaEquipos.innerHTML = "No hay elementos favoritos";
+     } else {
+         listaEquipos.innerHTML = masEquipos;
+     }
+      
+   }else{
+
+      actfav=false;
+      document.getElementById("cargar").style.display = "";
+      loadMoreRequests = 1;
+      const response = await fetch(`/equipos?from=${0}&to=${6}`);
+      const masEquipos = await response.text();
+
+      const listaEquipos = document.getElementById("listaEquipos");
+      listaEquipos.innerHTML = '';
+      listaEquipos.innerHTML += masEquipos;
+   }
+
+      
 }
 
 
@@ -176,7 +189,7 @@ function cambiarcolorboton(equipo){
    if(equipo.fav==true){
    boton.style.color='gold';
    }else if(equipo.fav==false){
-   boton.style.color='';
+   boton.style.color='gray';
 }
 }
 
