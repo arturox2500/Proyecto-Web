@@ -1,5 +1,5 @@
 {{#posts}}
-                <div class="equipo-wrapper">
+                <div class="equipo-wrapper" >
                     <div class="equipo-div">
                         <div class="equipo-img">
                             <img src={{link}} alt="logo {{equipo}}">
@@ -19,6 +19,7 @@
                         </div>
                         <div class="eq-boton">
                             <a href="post/{{id}}" class="btn btn-secondary btn-sm" id="boton">Mas info</a>
+                            <button class="btn btn-secondary" id="botonFav{{id}}" onclick='Favoritos("{{id}}")'>*</button>
                         </div>
                     </div>
 

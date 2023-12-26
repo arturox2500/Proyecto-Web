@@ -23,6 +23,7 @@ export function addPost(post) {
     let id = nextId++;
     post.id = id.toString();
     post.jugadores = [];
+    post.fav=false;
     posts.set(post.id, post);
     return id
 }

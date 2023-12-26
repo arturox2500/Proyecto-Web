@@ -1,6 +1,7 @@
 const NUM_RESULTS = 3;
 let loadMoreRequests = 1;
 let noMoreElements = false; 
+let EquiposFavoritos=[];
 
 async function loadElements() {
     if (noMoreElements) {      
@@ -133,6 +134,31 @@ function updateDisplayedTeams(teams, searchQuery) {
            }
        }
    }
+}
+async function Favoritos(ID) {   
+console.log(ID);
+const response = await fetch(`/Favoritos?Id=${ID}`);
+const equipo = await response.json();
+if(equipo.fav==true){
+EquiposFavoritos.push(equipo);
+for (let i = 0; i < EquiposFavoritos.length; i++) {
+   console.log(EquiposFavoritos[i]);
+}
+}else if(equipo.fav==false){
+   EquiposFavoritos=EquiposFavoritos.filter(objeto => objeto.id !== equipo.id);
+   for (let i = 0; i < EquiposFavoritos.length; i++) {
+      console.log(EquiposFavoritos[i]);
+   }
+}
+cambiarcolorboton(equipo);
+}
+function cambiarcolorboton(equipo){
+   const boton =document.getElementById("botonFav"+equipo.id);
+   if(equipo.fav==true){
+   boton.style.color='gold';
+   }else if(equipo.fav==false){
+   boton.style.color='';
+}
 }
 //////////////////////////////////////////Nuevo/editar//////////////////////////////////////////////////////////////
 async function checkNombreEquipoAvailability() {

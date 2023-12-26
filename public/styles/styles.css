@@ -4,7 +4,8 @@ body {
 
 
 #navlogoliga {
-    height: 6.122vh;
+  height: 6.122vh;
+
 }
 
 
@@ -107,6 +108,8 @@ h4{
 }
 
 .eq-boton{
+    display: flex;
+    gap: 7px;
     position: absolute;
     bottom: 5%;
     margin-left: 25%;

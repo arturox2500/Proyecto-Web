@@ -38,7 +38,7 @@
         <div class="lista" id="listaEquipos">
 
             {{#posts}}
-                <div class="equipo-wrapper">
+                <div class="equipo-wrapper" >
                     <div class="equipo-div">
                         <div class="equipo-img">
                             <img src={{link}} alt="logo {{equipo}}">
@@ -58,6 +58,7 @@
                         </div>
                         <div class="eq-boton">
                             <a href="post/{{id}}" class="btn btn-secondary btn-sm" id="boton">Mas info</a>
+                            <button class="btn btn-secondary" id="botonFav{{id}}" onclick='Favoritos("{{id}}")'>*</button>
                         </div>
                     </div>
 
@@ -71,7 +72,7 @@
         </div>
 
         <div id="cargarButton">
-            <button id="cargar" onclick='loadElements()'>Cargar mas equipos</button>
+            <button id="cargar" class="btn btn-secondary" onclick='loadElements()'>Cargar mas equipos</button>
         </div>
 
 
@@ -79,6 +80,7 @@
 
     <div class="containerboton">
         <a href="pagina-nuevo-elemento" class="btn btn-secondary" id="boton">Crear nuevo equipo</a>
+        <button id="cargar" class="btn btn-secondary" onclick=''>Favoritos</button>
     </div>
 
     <div class="footer">
@@ -89,7 +91,8 @@
 
 
 
-    <script src="app.js"></script>
+    <script src="/app.js"></script>
+
 </body>
 
 </html>

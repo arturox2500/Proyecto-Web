@@ -45,6 +45,19 @@ mainRouter.get('/equipos', (req, res) => {
 
     }
 });
+mainRouter.get('/Favoritos', (req, res) => {
+let id=req.query.Id;
+const equipo= mainService.getPost(id);
+if(equipo.fav==false){
+equipo.fav=true;
+}else{
+equipo.fav=false;
+}
+
+res.json(equipo);
+
+});
+
 
 
 
@@ -117,6 +130,7 @@ mainRouter.post('/post/:id/edit', (req, res) => {
 
     
 });
+
 ///////////////////////////////////////////////////nuevo/editar//////////////////////////////////////////////////////
 mainRouter.get('/availableURL', (req, res) => {
 
