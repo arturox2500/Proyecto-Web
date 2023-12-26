@@ -2,6 +2,7 @@ const NUM_RESULTS = 3;
 let loadMoreRequests = 1;
 let noMoreElements = false; 
 let EquiposFavoritos=[];
+let actfav=false;
 
 async function loadElements() {
     if (noMoreElements) {      
@@ -124,6 +125,7 @@ function updateDisplayedTeams(teams, searchQuery) {
                      </div>
                      <div class="eq-boton">
                         <a href="post/${teamDetails.id}" class="btn btn-secondary btn-sm" id="boton">Mas info</a>
+                        <button class="btn btn-secondary" id="botonFav${teamDetails.id}" onclick='Favoritos("${teamDetails.id}")'>*</button>
                      </div>
                   </div>
                </div>
@@ -135,23 +137,40 @@ function updateDisplayedTeams(teams, searchQuery) {
        }
    }
 }
+
+
 async function Favoritos(ID) {   
-console.log(ID);
 const response = await fetch(`/Favoritos?Id=${ID}`);
 const equipo = await response.json();
 if(equipo.fav==true){
 EquiposFavoritos.push(equipo);
-for (let i = 0; i < EquiposFavoritos.length; i++) {
-   console.log(EquiposFavoritos[i]);
-}
+
 }else if(equipo.fav==false){
    EquiposFavoritos=EquiposFavoritos.filter(objeto => objeto.id !== equipo.id);
-   for (let i = 0; i < EquiposFavoritos.length; i++) {
-      console.log(EquiposFavoritos[i]);
-   }
 }
 cambiarcolorboton(equipo);
 }
+
+
+async function MostrarFavoritos() {
+   if(actfav==false){
+      actfav=true;
+   }else{
+      actfav=false;
+   }
+
+      list=EquiposFavoritos.length;
+      bool=actfav;
+      const response = await fetch(`/MostrarFav?list=${list}&bool=${bool}`);
+
+      const masEquipos = await response.text();
+  
+      const listaEquipos = document.getElementById("listaEquipos");
+  
+      listaEquipos.innerHTML  = masEquipos;
+}
+
+
 function cambiarcolorboton(equipo){
    const boton =document.getElementById("botonFav"+equipo.id);
    if(equipo.fav==true){
@@ -160,6 +179,7 @@ function cambiarcolorboton(equipo){
    boton.style.color='';
 }
 }
+
 //////////////////////////////////////////Nuevo/editar//////////////////////////////////////////////////////////////
 async function checkNombreEquipoAvailability() {
 

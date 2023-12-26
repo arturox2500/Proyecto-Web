@@ -59,6 +59,24 @@ res.json(equipo);
 });
 
 
+mainRouter.get('/MostrarFav', (req, res) => {
+    let lista =parseInt(req.query.list);
+    let bool=req.query.bool;
+    if(bool=='true'){
+      if(lista !== 0){
+         posts = mainService.getfavs();
+         res.render('equipos', { posts });
+       }else{
+         let auxposts = "no hay elementos favoritos"       
+         res.json(auxposts);
+       }
+    }else{
+        let auxposts = getPosts(0, 6);;       
+        res.render('equipos', {auxposts });
+    }
+});
+
+
 
 
 mainRouter.post('/new-elem', (req, res) => {

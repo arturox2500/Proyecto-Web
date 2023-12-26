@@ -41,6 +41,12 @@ export function getPosts(from, to){
     }
 }
 
+export function getfavs(){
+    let elementosFavoritos = Array.from(posts.values()).filter(elemento => elemento.fav === true);
+
+        return elementosFavoritos;
+    }
+
 export function getPost(id){
     return posts.get(id);
 }
