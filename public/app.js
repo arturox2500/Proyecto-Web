@@ -186,20 +186,30 @@ async function MostrarFavoritos() {
 
 async function cambiarcolorboton(equipo){
    const boton =document.getElementById("botonFav"+equipo.id);
-   if(equipo.fav==true){
-   boton.style.color='gold';
+   if(equipo.fav==true){  
+      boton.style.color='gold';
+   setTimeout(function(){
+      boton.style.color='white';
+  }, 200);
    }else if(equipo.fav==false){
    boton.style.color='gray';
-   const response = await fetch(`/MostrarFav?&bool=${bool}`);
+   const response = await fetch(`/MostrarFav`);
    const masEquipos = await response.text();
+   console.log(masEquipos)
+   if (actfav){
+      setTimeout(function(){
+         if (masEquipos.trim() === "") {      
+            listaEquipos.innerHTML = "No hay elementos favoritos";
+        } else {
+            listaEquipos.innerHTML = masEquipos;
+        }
+     }, 250);
+   } else{
+      setTimeout(function(){
+         boton.style.color = 'white';
+     }, 250);
+   }
    
-   setTimeout(function(){
-      if (masEquipos.trim() === "") {      
-         listaEquipos.innerHTML = "No hay elementos favoritos";
-     } else {
-         listaEquipos.innerHTML = masEquipos;
-     }
-  }, 250);
    
 }
 }
