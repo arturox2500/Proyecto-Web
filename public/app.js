@@ -184,12 +184,23 @@ async function MostrarFavoritos() {
 }
 
 
-function cambiarcolorboton(equipo){
+async function cambiarcolorboton(equipo){
    const boton =document.getElementById("botonFav"+equipo.id);
    if(equipo.fav==true){
    boton.style.color='gold';
    }else if(equipo.fav==false){
    boton.style.color='gray';
+   const response = await fetch(`/MostrarFav?&bool=${bool}`);
+   const masEquipos = await response.text();
+   
+   setTimeout(function(){
+      if (masEquipos.trim() === "") {      
+         listaEquipos.innerHTML = "No hay elementos favoritos";
+     } else {
+         listaEquipos.innerHTML = masEquipos;
+     }
+  }, 250);
+   
 }
 }
 
